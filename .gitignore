@@ -19,3 +19,6 @@ wheels/
 
 # Downloaded sources (provenance is in data/manifest/collected.toml)
 data/raw/
+
+# Parsed text and chunks (regenerate with python -m branchiv_org.ingest.parse)
+data/processed/

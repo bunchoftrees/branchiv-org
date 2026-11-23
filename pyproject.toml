@@ -17,7 +17,9 @@ dependencies = [
     "psycopg[binary]>=3.3.9",
     "pydantic>=2.14.4",
     "pydantic-settings>=2.16.3",
+    "pypdf>=7.1.1",
     "sqlalchemy>=2.1.9",
+    "trafilatura>=2.3.1",
 ]
 
 [project.scripts]
