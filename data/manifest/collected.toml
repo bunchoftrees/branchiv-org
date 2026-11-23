@@ -3,6 +3,7 @@
 # The files themselves are in data/raw/, which is not in git.
 
 [sources."army-2026-jmc-casing-of-colors"]
+method = "http"
 url = "https://www.army.mil/article/293166"
 final_url = "https://www.army.mil/article/293166"
 http_status = 200
@@ -14,6 +15,7 @@ retrieved_at = 2026-11-23T03:22:49Z
 local_path = "data/raw/army-2026-jmc-casing-of-colors/20261123T032249Z.html"
 
 [sources."gao-23-105352"]
+method = "http"
 url = "https://www.gao.gov/assets/gao-23-105352.pdf"
 final_url = "https://www.gao.gov/assets/gao-23-105352.pdf"
 http_status = 200
@@ -25,6 +27,7 @@ retrieved_at = 2026-11-23T03:22:50Z
 local_path = "data/raw/gao-23-105352/20261123T032250Z.pdf"
 
 [sources."ipr-2026-army-detonation-risks"]
+method = "http"
 url = "https://www.iowapublicradio.org/environment/2026-11-19/army-lead-detonation-public-health-safety-risks"
 final_url = "https://www.iowapublicradio.org/environment/2026-11-19/army-lead-detonation-public-health-safety-risks"
 http_status = 200

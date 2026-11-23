@@ -16,11 +16,14 @@ from datetime import datetime
 from pathlib import Path
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field, ValidationError
+from pydantic import BaseModel, ConfigDict, Field, ValidationError, model_validator
 
 DEFAULT_LOCK = Path("data/manifest/collected.toml")
 
 FetchedFormat = Literal["pdf", "html", "text"]
+
+# http: downloaded by the collector. manual: downloaded by a person and imported.
+Method = Literal["http", "manual"]
 
 
 class Snapshot(BaseModel):
@@ -38,9 +41,11 @@ class Fetch(BaseModel):
 
     model_config = ConfigDict(extra="forbid", frozen=True)
 
-    url: str
-    final_url: str
-    http_status: int
+    method: Method = "http"
+    # For manual imports, url is the manifest url (if any) and there is no HTTP response.
+    url: str | None = None
+    final_url: str | None = None
+    http_status: int | None = None
     content_type: str | None = None
     format: FetchedFormat
     bytes: int = Field(ge=0)
@@ -48,6 +53,12 @@ class Fetch(BaseModel):
     retrieved_at: datetime
     local_path: str
     history: list[Snapshot] = Field(default_factory=list)
+
+    @model_validator(mode="after")
+    def _http_fields(self) -> Fetch:
+        if self.method == "http" and None in (self.url, self.final_url, self.http_status):
+            raise ValueError("an http fetch needs url, final_url and http_status")
+        return self
 
 
 class Lock(BaseModel):

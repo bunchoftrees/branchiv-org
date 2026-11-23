@@ -12,6 +12,7 @@ There is no JavaScript rendering; HTML is saved as served.
 Usage:
   uv run python -m branchiv_org.ingest.collect --dry-run         # plan only, no network
   uv run python -m branchiv_org.ingest.collect [--doc-id ID ...] [--limit N] [--refresh]
+  uv run python -m branchiv_org.ingest.collect import DOC_ID PATH  # a hand-downloaded file
 """
 
 from __future__ import annotations
@@ -19,6 +20,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import os
+import shutil
 import sys
 import time
 from collections import Counter, defaultdict
@@ -209,29 +211,7 @@ class Collector:
         except FetchFailed as e:
             return Outcome(source.doc_id, "failed", str(e))
 
-        if previous is None:
-            return Outcome(source.doc_id, "new", fetch.local_path, fetch)
-        same = fetch.sha256 == previous.sha256
-        if same and not is_live_page(source):
-            Path(fetch.local_path).unlink(missing_ok=True)
-            return Outcome(source.doc_id, "unchanged", previous.local_path, previous)
-        kept = Snapshot(
-            sha256=previous.sha256,
-            retrieved_at=previous.retrieved_at,
-            local_path=previous.local_path,
-        )
-        fetch = fetch.model_copy(update={"history": [*previous.history, kept]})
-        if same:
-            return Outcome(
-                source.doc_id, "snapshot", f"live page, new snapshot {fetch.local_path}", fetch
-            )
-        return Outcome(
-            source.doc_id,
-            "changed",
-            f"sha256 changed upstream: {previous.sha256[:12]} -> {fetch.sha256[:12]}; "
-            f"kept {previous.local_path} and {fetch.local_path}",
-            fetch,
-        )
+        return reconcile(source, previous, fetch)
 
     def _download(self, doc_id: str, url: str) -> Fetch:
         host = host_of(url)
@@ -307,6 +287,78 @@ class Collector:
         return path
 
 
+def reconcile(source: Source, previous: Fetch | None, fetch: Fetch) -> Outcome:
+    """Compare a new file with the previous one: keep, discard as duplicate, or keep both."""
+    if previous is None:
+        return Outcome(source.doc_id, "new", fetch.local_path, fetch)
+    same = fetch.sha256 == previous.sha256
+    if same and not is_live_page(source):
+        Path(fetch.local_path).unlink(missing_ok=True)
+        return Outcome(source.doc_id, "unchanged", previous.local_path, previous)
+    kept = Snapshot(
+        sha256=previous.sha256,
+        retrieved_at=previous.retrieved_at,
+        local_path=previous.local_path,
+    )
+    fetch = fetch.model_copy(update={"history": [*previous.history, kept]})
+    if same:
+        return Outcome(
+            source.doc_id, "snapshot", f"live page, new snapshot {fetch.local_path}", fetch
+        )
+    return Outcome(
+        source.doc_id,
+        "changed",
+        f"sha256 changed upstream: {previous.sha256[:12]} -> {fetch.sha256[:12]}; "
+        f"kept {previous.local_path} and {fetch.local_path}",
+        fetch,
+    )
+
+
+_SUFFIX_TYPES = {
+    ".pdf": "application/pdf",
+    ".html": "text/html",
+    ".htm": "text/html",
+    ".txt": "text/plain",
+    ".md": "text/markdown",
+}
+
+
+def import_file(
+    source: Source,
+    path: Path,
+    previous: Fetch | None,
+    settings: Settings = Settings(),
+    now: Callable[[], datetime] | None = None,
+) -> Outcome:
+    """Copy a hand-downloaded file into raw/<doc_id>/ and describe it like a fetch."""
+    if not path.is_file():
+        return Outcome(source.doc_id, "failed", f"no such file: {path}")
+    data = path.read_bytes()
+    if len(data) > settings.max_bytes:
+        cap = settings.max_bytes
+        return Outcome(source.doc_id, "failed", f"too large: {len(data)} > cap {cap}")
+    content_type = _SUFFIX_TYPES.get(path.suffix.lower())
+    fmt = detect_format(content_type, data[:1024])
+    if fmt is None:
+        return Outcome(source.doc_id, "failed", f"unsupported file type: {path.name}")
+    retrieved_at = (now or (lambda: datetime.now(UTC)))().replace(microsecond=0)
+    directory = settings.raw_dir / source.doc_id
+    directory.mkdir(parents=True, exist_ok=True)
+    dest = Collector._unique_path(directory, retrieved_at, _EXTENSIONS[fmt])
+    shutil.copyfile(path, dest)
+    fetch = Fetch(
+        method="manual",
+        url=source.url,
+        content_type=content_type,
+        format=fmt,
+        bytes=len(data),
+        sha256=hashlib.sha256(data).hexdigest(),
+        retrieved_at=retrieved_at,
+        local_path=str(dest),
+    )
+    return reconcile(source, previous, fetch)
+
+
 def make_client(settings: Settings, transport: httpx2.BaseTransport | None = None) -> httpx2.Client:
     return httpx2.Client(
         headers={"User-Agent": USER_AGENT},
@@ -344,7 +396,38 @@ def run(
 # ------------------------------------------------------------------ CLI
 
 
+def import_main(argv: list[str]) -> int:
+    parser = argparse.ArgumentParser(prog="python -m branchiv_org.ingest.collect import")
+    parser.add_argument("doc_id")
+    parser.add_argument("path", type=Path)
+    parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
+    parser.add_argument("--lock", type=Path, default=DEFAULT_LOCK)
+    parser.add_argument("--raw-dir", type=Path, default=DEFAULT_RAW_DIR)
+    args = parser.parse_args(argv)
+    try:
+        manifest = load_manifest(args.manifest)
+        lock = load_lock(args.lock)
+    except (ManifestError, LockError) as e:
+        print(e, file=sys.stderr)
+        return 2
+    source = next((s for s in manifest.sources if s.doc_id == args.doc_id), None)
+    if source is None:
+        print(f"unknown doc_id: {args.doc_id}", file=sys.stderr)
+        return 2
+    outcome = import_file(
+        source, args.path, lock.sources.get(source.doc_id), Settings(raw_dir=args.raw_dir)
+    )
+    print(f"{outcome.result:9s} {source.doc_id}  {outcome.message}")
+    if outcome.fetch is not None and outcome.result != "unchanged":
+        lock.sources[source.doc_id] = outcome.fetch
+        save_lock(lock, args.lock)
+    return 1 if outcome.result == "failed" else 0
+
+
 def main(argv: list[str] | None = None, transport: httpx2.BaseTransport | None = None) -> int:
+    argv = sys.argv[1:] if argv is None else argv
+    if argv[:1] == ["import"]:
+        return import_main(argv[1:])
     parser = argparse.ArgumentParser(prog="python -m branchiv_org.ingest.collect")
     parser.add_argument("--doc-id", action="append", default=[], help="only these (repeatable)")
     parser.add_argument("--dry-run", action="store_true", help="print the plan; no network")

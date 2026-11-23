@@ -412,3 +412,69 @@ def test_validator_rejects_orphan_lock_entries(tmp_path: Path) -> None:
     from branchiv_org.ingest.manifest import main as validate
 
     assert validate([str(manifest_path)]) == 1
+
+
+# ------------------------------------------------------------------ manual import
+
+
+def test_import_copies_file_and_records_manual_method(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    manifest_path = tmp_path / "sources.toml"
+    manifest_path.write_text(MANIFEST, encoding="utf-8")
+    lock_path = tmp_path / "collected.toml"
+    downloaded = tmp_path / "Downloads" / "Alpha Report.pdf"
+    downloaded.parent.mkdir()
+    downloaded.write_bytes(PDF)
+    args = ["--manifest", str(manifest_path), "--lock", str(lock_path)]
+    args += ["--raw-dir", str(tmp_path / "raw")]
+
+    assert main(["import", "alpha", str(downloaded), *args]) == 0
+
+    fetch = load_lock(lock_path).sources["alpha"]
+    assert fetch.method == "manual"
+    assert fetch.format == "pdf"
+    assert fetch.url == "https://a.example/doc"
+    assert fetch.http_status is None and fetch.final_url is None
+    assert fetch.bytes == len(PDF)
+    assert Path(fetch.local_path).parent == tmp_path / "raw" / "alpha"
+    assert Path(fetch.local_path).read_bytes() == PDF
+    assert downloaded.exists()  # copied, not moved
+
+    # Importing the same file again changes nothing.
+    assert main(["import", "alpha", str(downloaded), *args]) == 0
+    assert "unchanged" in capsys.readouterr().out
+    assert load_lock(lock_path).sources["alpha"] == fetch
+
+
+@pytest.mark.parametrize(
+    ("doc_id", "filename", "body", "code"),
+    [
+        ("nope", "a.pdf", PDF, 2),
+        ("alpha", "a.png", b"\x89PNG", 1),
+        ("alpha", "missing.pdf", None, 1),
+    ],
+)
+def test_import_rejects_bad_input(
+    tmp_path: Path, doc_id: str, filename: str, body: bytes | None, code: int
+) -> None:
+    manifest_path = tmp_path / "sources.toml"
+    manifest_path.write_text(MANIFEST, encoding="utf-8")
+    lock_path = tmp_path / "collected.toml"
+    file = tmp_path / filename
+    if body is not None:
+        file.write_bytes(body)
+    args = ["--manifest", str(manifest_path), "--lock", str(lock_path)]
+    assert main(["import", doc_id, str(file), *args, "--raw-dir", str(tmp_path / "raw")]) == code
+    assert not lock_path.exists()
+
+
+def test_http_fetch_requires_response_fields() -> None:
+    with pytest.raises(ValueError, match="http fetch needs"):
+        Fetch(
+            format="pdf",
+            bytes=1,
+            sha256="0" * 64,
+            retrieved_at=datetime(2026, 1, 1, tzinfo=UTC),
+            local_path="x.pdf",
+        )
