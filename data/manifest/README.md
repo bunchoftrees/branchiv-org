@@ -31,7 +31,10 @@ validation instead of being silently ignored.
 | `verified` | yes | `false` = reported but not yet matched to a primary record (the dossier's "Unverified"). |
 | `safety_review` | yes | `true` = may contain material handling, chemistry or method detail. Every passage goes through the ingest-time safety filter **and** a human spot check. |
 | `sha256` | no | Checksum of the collected file, so a changed source is caught rather than silently re-ingested. |
-| `notes` | no | Anything ingest or a reviewer needs to know. |
+| `copy_of` | no | `doc_id` of the canonical record this source is a copy of. Must exist in the manifest and not be the source itself. Requires at least one caveat. |
+| `caveats` | no | Labels for why the copy needs a warning; see [Caveats and copies](#caveats-and-copies). |
+| `caveat_note` | no | Plain-language warning shown to users with every citation of this source. |
+| `notes` | no | Anything ingest or a reviewer needs to know. Internal only, never shown to users. |
 
 Location rules:
 
@@ -43,6 +46,29 @@ Location rules:
 The validator checks the manifest itself, not the filesystem: a `local_path` may point at a
 file that has not been added yet (see `silvia-methodology` and the Reuters PDF). Ingest must
 fail on a missing file.
+
+## Caveats and copies
+
+Sometimes the best available copy of a record is not the official one. Such a source stays
+in the corpus but carries labels:
+
+| Caveat | Meaning |
+|---|---|
+| `unofficial_copy` | Third-party upload, not checked against the original. |
+| `archived_copy` | Web archive snapshot (e.g. the UNT End of Term archive, EPA's Jan 2021 snapshot). |
+| `advocacy_host` | An official record hosted by an advocacy group. |
+| `live_page` | Content changes over time; ingest saves a dated snapshot. |
+
+Rules:
+
+- When an answer cites a caveated source, it must show the source's `caveat_note` (or, if
+  there is none, the caveat labels) next to the citation.
+- A copy points at its canonical record with `copy_of` and needs at least one caveat. Once
+  the canonical record is collected, the copy is superseded: cite the original and remove
+  the copy from the corpus.
+
+Example: `scribd-1984-shaneyfelt-complexities-of-lead-azide-copy` stands in for the DDESB
+paper while DTIC public access is offline.
 
 ## Tiers
 
@@ -58,7 +84,6 @@ Full definitions: methodology.md, "How sources are rated".
 ## Deliberately excluded
 
 - Wikipedia, "Lead(II) azide": tertiary and chemistry-heavy. Use its underlying sources instead.
-- The Scribd copy of the 1984 Shaneyfelt paper: a reading copy only, never cited.
 - The source dossier and summary of findings: working documents built from the sources
   above. Answers should cite the records, not notes about them.
 

@@ -54,6 +54,14 @@ Format = Literal["pdf", "html", "markdown", "text"]
 
 Status = Literal["to_collect", "collected", "unavailable", "needs_original"]
 
+# Why a source's copy needs a warning. Shown to users alongside caveat_note.
+Caveat = Literal[
+    "unofficial_copy",  # third-party upload, not checked against the original
+    "archived_copy",  # web archive snapshot
+    "advocacy_host",  # official record hosted by an advocacy group
+    "live_page",  # content changes; the snapshot is dated
+]
+
 # Lowercase slug: letters, digits, single hyphens. Stable forever once used.
 _DOC_ID = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 # YYYY, YYYY-MM or YYYY-MM-DD.
@@ -77,6 +85,12 @@ class Source(BaseModel):
     verified: bool
     safety_review: bool
     sha256: str | None = Field(default=None, pattern=r"^[0-9a-f]{64}$")
+    # doc_id of the canonical record this is a copy of. Supersede the copy with the
+    # canonical record once that is collected.
+    copy_of: str | None = None
+    caveats: list[Caveat] = Field(default_factory=list)
+    # Shown to users with every citation of this source. `notes` is internal only.
+    caveat_note: str | None = Field(default=None, min_length=1)
     notes: str | None = None
 
     @field_validator("published", mode="before")
@@ -103,7 +117,14 @@ class Source(BaseModel):
                 raise ValueError(f"{self.doc_id}: a collected source needs a url or a local_path")
             if self.format is None:
                 raise ValueError(f"{self.doc_id}: a collected source needs a format")
-        elif self.status == "needs_original" and self.url is None:
+        if self.copy_of is not None:
+            if self.copy_of == self.doc_id:
+                raise ValueError(f"{self.doc_id}: copy_of cannot point at itself")
+            if not self.caveats:
+                raise ValueError(f"{self.doc_id}: a copy (copy_of) needs at least one caveat")
+        if len(set(self.caveats)) != len(self.caveats):
+            raise ValueError(f"{self.doc_id}: duplicate caveats")
+        if self.status == "needs_original" and self.url is None:
             raise ValueError(f"{self.doc_id}: needs_original requires the url of the copy")
         return self
 
@@ -137,6 +158,13 @@ class Manifest(BaseModel):
         dupes = [doc_id for doc_id, n in counts.items() if n > 1]
         if dupes:
             raise ValueError(f"duplicate doc_id(s): {', '.join(sorted(dupes))}")
+        unknown = [
+            f"{s.doc_id} -> {s.copy_of}"
+            for s in self.sources
+            if s.copy_of is not None and s.copy_of not in counts
+        ]
+        if unknown:
+            raise ValueError(f"copy_of names an unknown doc_id: {', '.join(unknown)}")
         return self
 
     def to_documents(self) -> list[Document]:
@@ -174,6 +202,7 @@ def summarize(manifest: Manifest) -> str:
     sources = manifest.sources
     tiers = Counter(s.tier for s in sources)
     statuses = Counter(s.status for s in sources)
+    caveats = Counter(c for s in sources for c in s.caveats)
     return "\n".join(
         [
             f"snapshot {manifest.snapshot_version}, as of {manifest.as_of}, {len(sources)} sources",
@@ -181,6 +210,7 @@ def summarize(manifest: Manifest) -> str:
             "  status: " + " ".join(f"{s}={statuses[s]}" for s in get_args(Status)),
             f"  safety_review: {sum(s.safety_review for s in sources)}",
             f"  unverified: {sum(not s.verified for s in sources)}",
+            "  caveats: " + " ".join(f"{c}={caveats[c]}" for c in get_args(Caveat)),
         ]
     )
 

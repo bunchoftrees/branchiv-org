@@ -3,7 +3,7 @@
 # Validate with: uv run python -m branchiv_org.ingest.manifest
 
 # Bump whenever sources are added, removed or re-fetched.
-snapshot_version = "2026-11-22"
+snapshot_version = "2026-11-22.1"
 # Date the statuses and notes below were last checked.
 as_of = 2026-11-22
 
@@ -71,6 +71,7 @@ url = "https://19january2021snapshot.epa.gov/ia/iowa-army-ammunition-plant-middl
 status = "to_collect"
 verified = true
 safety_review = true
+caveats = ["archived_copy"]
 notes = "Archived copy (Jan 2021 EPA snapshot)."
 
 [[sources]]
@@ -146,6 +147,7 @@ url = "https://echo.epa.gov/detailed-facility-report?fid=110041994973"
 status = "to_collect"
 verified = true
 safety_review = false
+caveats = ["live_page"]
 notes = "Live page. Save a dated snapshot at ingest; \"published\" is the pull date."
 
 [[sources]]
@@ -367,6 +369,7 @@ url = "https://home.army.mil/redstone/index.php/about/leadership/senior-commande
 status = "to_collect"
 verified = true
 safety_review = false
+caveats = ["live_page"]
 notes = "Live page. Save a dated snapshot at ingest."
 
 # ---------------------------------------- Tier 1: Congress, courts, statutes
@@ -489,6 +492,7 @@ url = "https://www.usaspending.gov/award/CONT_AWD_W519TC25F0417_9700_W52P1J09G00
 status = "to_collect"
 verified = true
 safety_review = false
+caveats = ["live_page"]
 notes = "Live record. Save a dated snapshot at ingest."
 
 # ---------------------------------------------- Tier 2: GAO, IG, CRS reports
@@ -615,6 +619,7 @@ url = "https://webarchive.library.unt.edu/eot2008/20090506010334/http://www.atsd
 status = "to_collect"
 verified = true
 safety_review = false
+caveats = ["archived_copy"]
 notes = "Archived copy (UNT End of Term archive)."
 
 [[sources]]
@@ -628,6 +633,7 @@ url = "https://cswab.org/wp-content/uploads/2017/04/Iowa-Army-Ammunition-Plant-A
 status = "needs_original"
 verified = true
 safety_review = false
+caveats = ["advocacy_host"]
 notes = "Hosted by an advocacy group. Locate the ATSDR original before citing."
 
 [[sources]]
@@ -678,6 +684,7 @@ url = "https://webarchive.library.unt.edu/web/20130214190821/http://www.osc.army
 status = "to_collect"
 verified = true
 safety_review = false
+caveats = ["archived_copy"]
 notes = "Archived copy."
 
 [[sources]]
@@ -691,6 +698,7 @@ url = "https://webarchive.library.unt.edu/web/20130214190821/http://www.osc.army
 status = "to_collect"
 verified = true
 safety_review = false
+caveats = ["archived_copy"]
 notes = "The dossier cites the same archived URL as FY2000. Confirm the correct FY2003 link at collection."
 
 [[sources]]
@@ -739,7 +747,23 @@ url = "https://apps.dtic.mil/sti/pdfs/ADP004872.pdf"
 status = "unavailable"
 verified = true
 safety_review = true
-notes = "DTIC public access offline since late summer 2026. Try NTIS, a library or FOIA (Distribution A). Also in the full proceedings at https://apps.dtic.mil/sti/pdfs/ADA152150.pdf (starts p. 1143). Describes storage and destruction methods: index only the storage-history and warning passages that pass the safety filter. The Scribd copy is for reading only; never cite it."
+notes = "DTIC public access offline since late summer 2026. Try NTIS, a library or FOIA (Distribution A). Also in the full proceedings at https://apps.dtic.mil/sti/pdfs/ADA152150.pdf (starts p. 1143). Describes storage and destruction methods: index only the storage-history and warning passages that pass the safety filter. Until it is obtained, the unofficial Scribd copy (scribd-1984-shaneyfelt-complexities-of-lead-azide-copy) stands in for it."
+
+[[sources]]
+doc_id = "scribd-1984-shaneyfelt-complexities-of-lead-azide-copy"
+title = "Complexities of Lead Azide (Shaneyfelt, 1984), unofficial Scribd copy"
+publisher = "Scribd (user upload)"
+source_type = "technical_paper"
+tier = 2
+published = "1984-08-29"
+url = "https://www.scribd.com/document/148877975/Lead-Azide-p004872"
+status = "to_collect"
+verified = false
+safety_review = true
+copy_of = "ddesb-1984-shaneyfelt-complexities-of-lead-azide"
+caveats = ["unofficial_copy"]
+caveat_note = "Read from an unofficial third-party upload because DTIC public access is offline. Not yet checked against the DTIC original."
+notes = "Replace with the DTIC/NTIS original once it is obtained. Same safety filtering as the original: index only the storage-history and warning passages that pass the filter."
 
 [[sources]]
 doc_id = "sipri-2026-milex-2025"
@@ -936,12 +960,13 @@ publisher = "Reuters (Jack Queen)"
 source_type = "news"
 tier = 3
 published = "2026-11-22"
+url = "https://www.reuters.com/legal/government/iowa-detonation-lead-will-proceed-under-emergency-powers-army-says-bypassing-2026-11-22/"
 local_path = "data/sources/reuters-2026-doj-detonate-without-permit.pdf"
 format = "pdf"
 status = "collected"
 verified = true
 safety_review = false
-notes = "Saved as a PDF; add the article link, and add the PDF at local_path before ingest. Get the underlying filing from PACER (ca8-2026-lead-azide-docket)."
+notes = "Saved as a PDF; add the PDF at local_path before ingest. Get the underlying filing from PACER (ca8-2026-lead-azide-docket)."
 
 [[sources]]
 doc_id = "ipr-2026-army-detonation-risks"
@@ -1349,6 +1374,5 @@ notes = "methodology.md. Cited for \"how do you know this?\" questions. The file
 
 # Deliberately excluded
 #   - Wikipedia "Lead(II) azide": tertiary; chemistry-heavy. Find its underlying source instead.
-#   - Scribd copy of the 1984 Shaneyfelt paper: reading copy only, never cited.
 #   - Source dossier and summary of findings: working documents built from the sources above.
 #     The model should cite the records, not John's notes about them.

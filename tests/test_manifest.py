@@ -115,6 +115,64 @@ def test_needs_original_requires_url(tmp_path: Path) -> None:
         load_manifest(_write(tmp_path, text))
 
 
+COPY = """
+[[sources]]
+doc_id = "alpha-report-copy"
+title = "Alpha Report, unofficial copy"
+publisher = "Somewhere"
+source_type = "oversight_report"
+tier = 2
+url = "https://example.com/alpha-copy.pdf"
+status = "to_collect"
+verified = false
+safety_review = false
+copy_of = "alpha-report"
+caveats = ["unofficial_copy"]
+caveat_note = "Unofficial copy."
+"""
+
+
+def test_copy_with_caveat_loads_and_is_counted(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    manifest = load_manifest(_write(tmp_path, VALID + COPY))
+    copy = manifest.sources[-1]
+    assert copy.copy_of == "alpha-report"
+    assert copy.caveats == ["unofficial_copy"]
+    assert copy.caveat_note == "Unofficial copy."
+    assert manifest.sources[0].caveats == []
+
+    assert main([str(_write(tmp_path, VALID + COPY))]) == 0
+    assert "caveats: unofficial_copy=1 archived_copy=0" in capsys.readouterr().out
+
+
+@pytest.mark.parametrize(
+    ("change", "message"),
+    [
+        (('caveats = ["unofficial_copy"]', ""), "at least one caveat"),
+        (('copy_of = "alpha-report"', 'copy_of = "nope"'), "unknown doc_id"),
+        (('copy_of = "alpha-report"', 'copy_of = "alpha-report-copy"'), "itself"),
+        (('["unofficial_copy"]', '["sketchy"]'), "caveats"),
+        (('["unofficial_copy"]', '["unofficial_copy", "unofficial_copy"]'), "duplicate"),
+        (('caveat_note = "Unofficial copy."', 'caveat_note = ""'), "caveat_note"),
+    ],
+)
+def test_invalid_copies_are_rejected(tmp_path: Path, change: tuple[str, str], message: str) -> None:
+    old, new = change
+    assert old in COPY
+    with pytest.raises(ManifestError, match=message):
+        load_manifest(_write(tmp_path, VALID + COPY.replace(old, new)))
+
+
+def test_caveat_without_copy_is_allowed(tmp_path: Path) -> None:
+    text = VALID.replace(
+        "verified = true\nsafety_review = false\n",
+        'verified = true\nsafety_review = false\ncaveats = ["live_page"]\n',
+        1,
+    )
+    assert load_manifest(_write(tmp_path, text)).sources[0].caveats == ["live_page"]
+
+
 def test_bad_toml_is_a_manifest_error(tmp_path: Path) -> None:
     with pytest.raises(ManifestError):
         load_manifest(_write(tmp_path, "snapshot_version = "))
