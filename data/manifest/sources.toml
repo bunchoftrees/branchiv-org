@@ -187,6 +187,20 @@ status = "to_collect"
 verified = true
 safety_review = false
 
+[[sources]]
+doc_id = "epa-osc-iaaap-lead-azide-site"
+title = "EPA On-Scene Coordinator site: IAAAP Lead Azide"
+publisher = "U.S. EPA Region 7"
+source_type = "reference_data"
+tier = 1
+url = "https://response.epa.gov/site/site_profile.aspx?site_id=17211"
+status = "to_collect"
+verified = true
+safety_review = true
+caveats = ["live_page"]
+caveat_note = "EPA's live response site; this reflects the page as of the snapshot date shown, and it may have changed since."
+notes = "Index of EPA response documents (permit notices, sitreps, sampling, fact sheets). Response documents may include technical detail; filter before indexing. Check it for a current link to emergency permit #1."
+
 # ------------------------------------------------- Tier 1: Army CERCLA records
 [[sources]]
 doc_id = "army-2026-ou11-proposed-plan"
