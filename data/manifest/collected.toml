@@ -2,6 +2,126 @@
 # One table per doc_id: the latest download. Earlier snapshots are kept in `history`.
 # The files themselves are in data/raw/, which is not in git.
 
+[sources."abc-2026-appeals-court-blocks-detonation"]
+method = "http"
+url = "https://abcnews.com/US/federal-appeals-court-temporarily-blocks-controlled-detonation-iowa/story?id=138321357"
+final_url = "https://abcnews.com/US/federal-appeals-court-temporarily-blocks-controlled-detonation-iowa/story?id=138321357"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 194513
+sha256 = "5ccc8e36607776c7afa7e02dcf5d9db480245cc6c393f206515db3f3a5182c80"
+retrieved_at = 2026-11-23T03:32:00Z
+local_path = "data/raw/abc-2026-appeals-court-blocks-detonation/20261123T033200Z.html"
+
+[sources."abc-2026-iowa-army-plant-detonation"]
+method = "http"
+url = "https://abcnews.com/US/iowa-army-plant-lead-azide-detonation/story?id=138261613"
+final_url = "https://abcnews.com/US/iowa-army-plant-lead-azide-detonation/story?id=138261613"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 215196
+sha256 = "1f938d50faf19e7ceb483a034c49cec7475129003fb06fbb742a99ad601d0e46"
+retrieved_at = 2026-11-23T03:32:02Z
+local_path = "data/raw/abc-2026-iowa-army-plant-detonation/20261123T033202Z.html"
+
+[sources."abc6-2026-lead-azide-plume-illinois"]
+method = "http"
+url = "https://6abc.com/story/10000-pounds-lead-azide-detonated-iowa-army-plant-causing-dust-plume-illinois/20055102/"
+final_url = "https://6abc.com/story/10000-pounds-lead-azide-detonated-iowa-army-plant-causing-dust-plume-illinois/20055102/"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 300346
+sha256 = "6e9e8edaebc7c2396b1620206df7ef8898540f2f223b91556fbf9c617e428527"
+retrieved_at = 2026-11-23T03:32:02Z
+local_path = "data/raw/abc6-2026-lead-azide-plume-illinois/20261123T033202Z.html"
+
+[sources."afsc-investigate-day-zimmermann"]
+method = "http"
+url = "https://investigate.afsc.org/company/day-zimmermann"
+final_url = "https://investigate.afsc.org/company/day-zimmermann"
+http_status = 200
+content_type = "text/html; charset=UTF-8"
+format = "html"
+bytes = 14779
+sha256 = "613c0ca7e00f4aa686bd98e7b593631b82a02ebbc2e4aa1466a91314c134cf30"
+retrieved_at = 2026-11-23T03:32:26Z
+local_path = "data/raw/afsc-investigate-day-zimmermann/20261123T033226Z.html"
+
+[sources."army-2014-picatinny-lead-free-primary"]
+method = "http"
+url = "https://www.army.mil/article/122127/picatinny_aims_for_green_with_new_type_of_primary_explosive"
+final_url = "https://www.army.mil/article/122127/picatinny_aims_for_green_with_new_type_of_primary_explosive"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 29466
+sha256 = "ffaa6d414adb31b05ccf6b6b849bb506450d5d7d0d8976f436263bceb357fbee"
+retrieved_at = 2026-11-23T03:30:59Z
+local_path = "data/raw/army-2014-picatinny-lead-free-primary/20261123T033059Z.html"
+
+[sources."army-2017-iaaap-new-commander"]
+method = "http"
+url = "https://www.army.mil/article/187930/iowa_army_ammunition_plant_welcomes_new_commander"
+final_url = "https://www.army.mil/article/187930/iowa_army_ammunition_plant_welcomes_new_commander"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 34586
+sha256 = "01c837fc853150f52e1b8f1bf0acae881992f2c860c72cacd8676f88fc8229d1"
+retrieved_at = 2026-11-23T03:31:01Z
+local_path = "data/raw/army-2017-iaaap-new-commander/20261123T033101Z.html"
+
+[sources."army-2019-iaaap-new-senior-leader"]
+method = "http"
+url = "https://www.army.mil/article/223063/iowa_army_ammunition_plant_welcomes_new_senior_leader"
+final_url = "https://www.army.mil/article/223063/iowa_army_ammunition_plant_welcomes_new_senior_leader"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 34259
+sha256 = "4557b28787d30214781d072b7feeb8bfd126f484a4f24ae6433b060352534ae4"
+retrieved_at = 2026-11-23T03:31:03Z
+local_path = "data/raw/army-2019-iaaap-new-senior-leader/20261123T033103Z.html"
+
+[sources."army-2025-future-artillery-complex-award"]
+method = "http"
+url = "https://www.army.mil/article/287951/army_invests_635m_in_cutting_edge_artillery_ammunition_production_facility"
+final_url = "https://www.army.mil/article/287951/army_invests_635m_in_cutting_edge_artillery_ammunition_production_facility"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 19785
+sha256 = "f102402ac52579f988f0300ba7999f64c3433c5c7252b0e6b5d1f5fd61f44777"
+retrieved_at = 2026-11-23T03:31:05Z
+local_path = "data/raw/army-2025-future-artillery-complex-award/20261123T033105Z.html"
+
+[sources."army-2026-fac-groundbreaking-article"]
+method = "http"
+url = "https://www.army.mil/article/294057"
+final_url = "https://www.army.mil/article/294057"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 28711
+sha256 = "656a2430c16225dc7febb353d71e7142b051a72bfbf3d71c3e57aa593f2996fb"
+retrieved_at = 2026-11-23T03:31:07Z
+local_path = "data/raw/army-2026-fac-groundbreaking-article/20261123T033107Z.html"
+
+[sources."army-2026-groundwater-cleanup-progress"]
+method = "http"
+url = "https://www.army.mil/article/295059/iowa_army_ammunition_plant_reports_big_step_forward_in_groundwater_cleanup"
+final_url = "https://www.army.mil/article/295059/iowa_army_ammunition_plant_reports_big_step_forward_in_groundwater_cleanup"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 19803
+sha256 = "0be4fe832d269f5e9cc6d3c998920d0ff2acb7e7cab69671b21b4eb682c31a32"
+retrieved_at = 2026-11-23T03:31:09Z
+local_path = "data/raw/army-2026-groundwater-cleanup-progress/20261123T033109Z.html"
+
 [sources."army-2026-jmc-casing-of-colors"]
 method = "http"
 url = "https://www.army.mil/article/293166"
@@ -13,6 +133,630 @@ bytes = 22569
 sha256 = "a9d97d388c33fbe3f0c4991cb227d3d36aa4143632d4a9a2844e4ef356ad3b86"
 retrieved_at = 2026-11-23T03:22:49Z
 local_path = "data/raw/army-2026-jmc-casing-of-colors/20261123T032249Z.html"
+
+[sources."army-2026-lead-azide-environmental-handout"]
+method = "http"
+url = "https://d34w7g4gy10iej.cloudfront.net/pubs/pdf_77825.pdf"
+final_url = "https://d34w7g4gy10iej.cloudfront.net/pubs/pdf_77825.pdf"
+http_status = 200
+content_type = "application/pdf"
+format = "pdf"
+bytes = 114859
+sha256 = "f65bf1849cad75987e6d14037f9b356087e9ff7d9cb525d0c195126cd9ce8c78"
+retrieved_at = 2026-11-23T03:30:56Z
+local_path = "data/raw/army-2026-lead-azide-environmental-handout/20261123T033056Z.pdf"
+
+[sources."army-2026-lead-azide-faq-handout"]
+method = "http"
+url = "https://d34w7g4gy10iej.cloudfront.net/pubs/pdf_77827.pdf"
+final_url = "https://d34w7g4gy10iej.cloudfront.net/pubs/pdf_77827.pdf"
+http_status = 200
+content_type = "application/pdf"
+format = "pdf"
+bytes = 167491
+sha256 = "522ec94f2d62c967becc49b8db8920eed529a93b5b5ae6a552299780c78d12de"
+retrieved_at = 2026-11-23T03:30:54Z
+local_path = "data/raw/army-2026-lead-azide-faq-handout/20261123T033054Z.pdf"
+
+[sources."army-2026-open-house-lead-azide"]
+method = "http"
+url = "https://www.army.mil/article/296388/iaaap_hosts_open_house_shares_lead_azide_detonation_information"
+final_url = "https://www.army.mil/article/296388/iaaap_hosts_open_house_shares_lead_azide_detonation_information"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 22803
+sha256 = "bd832e1b197283d7b2bfe42e8c69614dcdfbf2a348fa15d74a663d6547d0d46d"
+retrieved_at = 2026-11-23T03:31:11Z
+local_path = "data/raw/army-2026-open-house-lead-azide/20261123T033111Z.html"
+
+[sources."army-2026-open-house-slides"]
+method = "http"
+url = "https://d34w7g4gy10iej.cloudfront.net/pubs/pdf_77826.pdf"
+final_url = "https://d34w7g4gy10iej.cloudfront.net/pubs/pdf_77826.pdf"
+http_status = 200
+content_type = "application/pdf"
+format = "pdf"
+bytes = 697287
+sha256 = "587a6ce3cacd21bc8dc9086728084b75a99f2570c5397fa358d730adaf86fcb9"
+retrieved_at = 2026-11-23T03:30:53Z
+local_path = "data/raw/army-2026-open-house-slides/20261123T033053Z.pdf"
+
+[sources."army-asc-lineage-oib"]
+method = "http"
+url = "https://www.aschq.army.mil/About/History/Lineage/OIB/"
+final_url = "https://www.aschq.army.mil/About/History/Lineage/OIB/"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 77111
+sha256 = "c5d3805627307cfc113c2ac407508aae43c93939b7a0d93449251f7bfc832490"
+retrieved_at = 2026-11-23T03:31:48Z
+local_path = "data/raw/army-asc-lineage-oib/20261123T033148Z.html"
+
+[sources."atsdr-2003-beryllium-du-consultation"]
+method = "http"
+url = "https://cswab.org/wp-content/uploads/2017/04/Iowa-Army-Ammunition-Plant-ATSDR-Beryllium-and-Depleted-Uranium-2003.pdf"
+final_url = "https://cswab.org/wp-content/uploads/2017/04/Iowa-Army-Ammunition-Plant-ATSDR-Beryllium-and-Depleted-Uranium-2003.pdf"
+http_status = 200
+content_type = "application/pdf"
+format = "pdf"
+bytes = 281043
+sha256 = "4f454ef7714f5b155db9081697dc5f044eb6e08fd8348c5532af3cdd12a6068c"
+retrieved_at = 2026-11-23T03:31:42Z
+local_path = "data/raw/atsdr-2003-beryllium-du-consultation/20261123T033142Z.pdf"
+
+[sources."atsdr-2013-letter-health-consultation"]
+method = "http"
+url = "https://www.atsdr.cdc.gov/hac/pha/iowaarmyammunitionplant/iowaarmyammunitionplantlhc09192013_508.pdf"
+final_url = "https://www.atsdr.cdc.gov/hac/pha/iowaarmyammunitionplant/iowaarmyammunitionplantlhc09192013_508.pdf"
+http_status = 200
+content_type = "application/pdf"
+format = "pdf"
+bytes = 2661734
+sha256 = "b88028ec2ffa82a833c84268fbc81750db8e3832338dd60b97ceabc59ea7ca74"
+retrieved_at = 2026-11-23T03:31:43Z
+local_path = "data/raw/atsdr-2013-letter-health-consultation/20261123T033143Z.pdf"
+
+[sources."axios-2026-iowa-officials-notice"]
+method = "http"
+url = "https://axios.com/local/des-moines/2026/11/19/iowa-middletown-lead-azide-rob-sand-josh-turek"
+final_url = "https://www.axios.com/local/des-moines/2026/11/19/iowa-middletown-lead-azide-rob-sand-josh-turek"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 171870
+sha256 = "c93f20c1a28f918cc2a00bef838da710d58545fad0458e55ace1c624b80e4833"
+retrieved_at = 2026-11-23T03:32:11Z
+local_path = "data/raw/axios-2026-iowa-officials-notice/20261123T033211Z.html"
+
+[sources."brac-2005-iaaap-installation-summary"]
+method = "http"
+url = "https://digital.library.unt.edu/ark:/67531/metadc21491/m2/1/high_res_d/BRAC-2005_09242.pdf"
+final_url = "https://digital.library.unt.edu/ark:/67531/metadc21491/m2/1/high_res_d/BRAC-2005_09242.pdf"
+http_status = 200
+content_type = "application/pdf"
+format = "pdf"
+bytes = 201490
+sha256 = "b1012e01770ec025bdda1889eed81c2ccf59aba00c0898f8923b234a95c871f6"
+retrieved_at = 2026-11-23T03:31:48Z
+local_path = "data/raw/brac-2005-iaaap-installation-summary/20261123T033148Z.pdf"
+
+[sources."cbs2iowa-2026-lead-azide-timeline"]
+method = "http"
+url = "https://cbs2iowa.com/news/local/timeline-what-we-know-regarding-the-lead-azide-detonation"
+final_url = "https://cbs2iowa.com/news/local/timeline-what-we-know-regarding-the-lead-azide-detonation"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 274270
+sha256 = "c05334b29103d414b69285eb950de9225cc4babb4e5f5c865d881d99488d7204"
+retrieved_at = 2026-11-23T03:32:08Z
+local_path = "data/raw/cbs2iowa-2026-lead-azide-timeline/20261123T033208Z.html"
+
+[sources."cen-2026-lead-azide-detonation"]
+method = "http"
+url = "https://cen.acs.org/environment/lead-azide-army-explosive-detonate-toxic-plume/104/web/2026/11"
+final_url = "https://cen.acs.org/environment/lead-azide-army-explosive-detonate-toxic-plume/104/web/2026/11"
+http_status = 200
+content_type = "text/html;charset=utf-8"
+format = "html"
+bytes = 178316
+sha256 = "1889061f0c84b3097d8325dc21f7f3ec78201148cac83c9a3e5ca802d1551362"
+retrieved_at = 2026-11-23T03:31:59Z
+local_path = "data/raw/cen-2026-lead-azide-detonation/20261123T033159Z.html"
+
+[sources."cp24-2026-lead-dust-battle"]
+method = "http"
+url = "https://www.cp24.com/news/world/2026/11/21/fears-about-toxic-lead-dust-spur-battle-over-us-army-plan-to-detonate-bomb-making-material-in-iowa-heres-what-we-know/"
+final_url = "https://www.cp24.com/news/world/2026/11/21/fears-about-toxic-lead-dust-spur-battle-over-us-army-plan-to-detonate-bomb-making-material-in-iowa-heres-what-we-know/"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 164349
+sha256 = "507b1838360e4d4c3ed5d670d23cde118776d0467f5bac61096e1b1d696f91c3"
+retrieved_at = 2026-11-23T03:32:18Z
+local_path = "data/raw/cp24-2026-lead-dust-battle/20261123T033218Z.html"
+
+[sources."dakotanewsnow-2026-appeals-court-pauses"]
+method = "http"
+url = "https://www.dakotanewsnow.com/2026/11/20/appeals-court-pauses-lead-azide-detonation/"
+final_url = "https://www.dakotanewsnow.com/2026/11/20/appeals-court-pauses-lead-azide-detonation/"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 239431
+sha256 = "f91397c4b153594478f4a5b7cae2685d547cf9dc745c53e63d67da6f04bb5bd1"
+retrieved_at = 2026-11-23T03:32:06Z
+local_path = "data/raw/dakotanewsnow-2026-appeals-court-pauses/20261123T033206Z.html"
+
+[sources."dayzim-munitions-services"]
+method = "http"
+url = "https://www.dayzim.com/services-and-products/munitions"
+final_url = "https://www.dayzim.com/services-and-products/munitions"
+http_status = 200
+content_type = "text/html; charset=UTF-8"
+format = "html"
+bytes = 78796
+sha256 = "a7a2de8f1e2dabece7a6867766176d723cc9b021d2ca108d0670ac8b0db2696c"
+retrieved_at = 2026-11-23T03:32:25Z
+local_path = "data/raw/dayzim-munitions-services/20261123T033225Z.html"
+
+[sources."defensedaily-2023-ao-line-3a"]
+method = "http"
+url = "https://defensedaily.com/contract-awards/contract-award-american-ordnance-llc-middletown-iowa-24683179"
+final_url = "https://www.defensedaily.com/contract-awards/contract-award-american-ordnance-llc-middletown-iowa-24683179/"
+http_status = 200
+content_type = "text/html; charset=UTF-8"
+format = "html"
+bytes = 202966
+sha256 = "6356424184e36ebe5a52d4628aad1fac2fc2dff5f7bc509f3c842b2d71e3072d"
+retrieved_at = 2026-11-23T03:31:58Z
+local_path = "data/raw/defensedaily-2023-ao-line-3a/20261123T033158Z.html"
+
+[sources."defensenews-2026-155mm-production"]
+method = "http"
+url = "https://www.defensenews.com/news/your-military/2026/07/14/manufacturing-woes-hamper-us-155-mm-ammo-production/"
+final_url = "https://www.defensenews.com/pentagon/2026/07/14/manufacturing-woes-hamper-us-155-mm-ammo-production/"
+http_status = 200
+content_type = "text/html; charset=UTF-8"
+format = "html"
+bytes = 227411
+sha256 = "a7b693669a5e44af0dc729c96ded9f442e789c7ad3b57eb3a7efbc7309f5ec15"
+retrieved_at = 2026-11-23T03:32:19Z
+local_path = "data/raw/defensenews-2026-155mm-production/20261123T033219Z.html"
+
+[sources."defensepost-2026-ammo-plant-framework"]
+method = "http"
+url = "https://thedefensepost.com/2026/11/10/us-army-ammo-plants/amp/"
+final_url = "https://thedefensepost.com/2026/11/10/us-army-ammo-plants/amp/"
+http_status = 200
+content_type = "text/html; charset=UTF-8"
+format = "html"
+bytes = 67815
+sha256 = "67516cbfa99d729dc4bbcecb1cb685ed89f230491f141734ef6b0cb9f4757851"
+retrieved_at = 2026-11-23T03:32:20Z
+local_path = "data/raw/defensepost-2026-ammo-plant-framework/20261123T033220Z.html"
+
+[sources."dmr-2026-plant-temporarily-closes"]
+method = "http"
+url = "https://www.yahoo.com/news/articles/iowa-ammunition-plant-temporarily-closes-222200341.html"
+final_url = "https://www.yahoo.com/news/articles/iowa-ammunition-plant-temporarily-closes-222200341.html"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 770211
+sha256 = "9f8a916f3d199fac3951760ef4e577828bb12ee1a6be06bfe9aa68e71f64ab8c"
+retrieved_at = 2026-11-23T03:32:08Z
+local_path = "data/raw/dmr-2026-plant-temporarily-closes/20261123T033208Z.html"
+
+[sources."dodig-2022-013"]
+method = "http"
+url = "https://media.defense.gov/2021/Nov/08/2002888749/-1/-1/1/DODIG-2022-013_REDACTED.PDF"
+final_url = "https://media.defense.gov/2021/Nov/08/2002888749/-1/-1/1/DODIG-2022-013_REDACTED.PDF"
+http_status = 200
+content_type = "application/pdf"
+format = "pdf"
+bytes = 4480104
+sha256 = "13c7b654ffec09979a225d17a5886b4dd97ec92d11e3bc9247de1b544bac2ec5"
+retrieved_at = 2026-11-23T03:31:37Z
+local_path = "data/raw/dodig-2022-013/20261123T033137Z.pdf"
+
+[sources."dodig-2025-153"]
+method = "http"
+url = "https://www.dodig.mil/In-the-Spotlight/Article/4297643/index.html"
+final_url = "https://www.dodig.mil/In-the-Spotlight/Article/4297643/press-release-summary-report-lessons-learned-from-dod-oig-reports-on-munitions/"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 59716
+sha256 = "cac3c5395ef7ba6f7f8b6fdd14e3afa1dc0f6f4d9421cca48ccf4a18e2076cda"
+retrieved_at = 2026-11-23T03:31:38Z
+local_path = "data/raw/dodig-2025-153/20261123T033138Z.html"
+
+[sources."dol-2005-eeoicpa-bulletin-05-06"]
+method = "http"
+url = "https://www.dol.gov/agencies/owcp/energy/regs/compliance/PolicyandProcedures/finalbulletinshtml/Bulletin05-06ProcessingIAAPSECClass1949-1974Claims"
+final_url = "https://www.dol.gov/agencies/owcp/energy/regs/compliance/PolicyandProcedures/finalbulletinshtml/Bulletin05-06ProcessingIAAPSECClass1949-1974Claims"
+http_status = 200
+content_type = "text/html; charset=UTF-8"
+format = "html"
+bytes = 67701
+sha256 = "e78c151fa5c47d1d58684e8a393e1d7b1df0ab3327ca21e899dbbcd77e09ec86"
+retrieved_at = 2026-11-23T03:31:32Z
+local_path = "data/raw/dol-2005-eeoicpa-bulletin-05-06/20261123T033132Z.html"
+
+[sources."dowig-2026-095"]
+method = "http"
+url = "https://www.oversight.gov/sites/default/files/documents/reports/2026-07/DOWIG-2026-095%20155-mm_Redacted_Secure.pdf"
+final_url = "https://www.oversight.gov/sites/default/files/documents/reports/2026-07/DOWIG-2026-095%20155-mm_Redacted_Secure.pdf"
+http_status = 200
+content_type = "application/pdf"
+format = "pdf"
+bytes = 14628792
+sha256 = "6c98f1488a9b29c4989df359ae92bf8199a0ee04607de7be3d05b663439de91f"
+retrieved_at = 2026-11-23T03:31:39Z
+local_path = "data/raw/dowig-2026-095/20261123T033139Z.pdf"
+
+[sources."duckworth-2026-ria-workforce-letter"]
+method = "http"
+url = "https://www.duckworth.senate.gov/news/press-releases/duckworth-durbin-grassley-and-sorensen-demand-answers-from-army-on-rock-island-arsenal-workforce-reassignments"
+final_url = "https://www.duckworth.senate.gov/news/press-releases/duckworth-durbin-grassley-and-sorensen-demand-answers-from-army-on-rock-island-arsenal-workforce-reassignments"
+http_status = 200
+content_type = "text/html;charset=UTF-8"
+format = "html"
+bytes = 56879
+sha256 = "f037d3d4823e0857ebab7678e9d1ab6ebbed909cb58af66d2f1df92998683f9c"
+retrieved_at = 2026-11-23T03:31:33Z
+local_path = "data/raw/duckworth-2026-ria-workforce-letter/20261123T033133Z.html"
+
+[sources."durbin-2025-ria-support"]
+method = "http"
+url = "https://www.durbin.senate.gov/newsroom/press-releases/durbin-duckworth-grassley-lead-quad-cities-lawmakers-in-support-for-rock-island-arsenal"
+final_url = "https://www.durbin.senate.gov/newsroom/press-releases/durbin-duckworth-grassley-lead-quad-cities-lawmakers-in-support-for-rock-island-arsenal"
+http_status = 200
+content_type = "text/html;charset=UTF-8"
+format = "html"
+bytes = 53265
+sha256 = "8daf962415572972926b77c75ab9f68d6281d8cb08066e0ed3ebd9125d20af29"
+retrieved_at = 2026-11-23T03:31:34Z
+local_path = "data/raw/durbin-2025-ria-support/20261123T033134Z.html"
+
+[sources."dvids-2026-asc-leadership"]
+method = "http"
+url = "https://www.dvidshub.net/news/printable/567812"
+final_url = "https://www.dvidshub.net/news/printable/567812"
+http_status = 200
+content_type = "text/html; charset=UTF-8"
+format = "html"
+bytes = 8057
+sha256 = "59d00b3cc7ffb2344e2c21dbee4535fb169a6389a945d3f1244e348964012a3c"
+retrieved_at = 2026-11-23T03:31:15Z
+local_path = "data/raw/dvids-2026-asc-leadership/20261123T033115Z.html"
+
+[sources."dvids-2026-fac-cannon-fire-video"]
+method = "http"
+url = "https://www.dvidshub.net/video/1014812/canons-fire-celebration-groundbreaking-new-future-artillery-complex-fac-iowa-army-ammunition-plant"
+final_url = "https://www.dvidshub.net/video/1014812/canons-fire-celebration-groundbreaking-new-future-artillery-complex-fac-iowa-army-ammunition-plant"
+http_status = 200
+content_type = "text/html; charset=UTF-8"
+format = "html"
+bytes = 72551
+sha256 = "96c03c94d99cfde2a62f2c37065e4516e5a7baac8fb2513690989005cdfecce4"
+retrieved_at = 2026-11-23T03:31:13Z
+local_path = "data/raw/dvids-2026-fac-cannon-fire-video/20261123T033113Z.html"
+
+[sources."dvids-2026-fac-groundbreaking"]
+method = "http"
+url = "https://www.dvidshub.net/news/printable/570528"
+final_url = "https://www.dvidshub.net/news/printable/570528"
+http_status = 200
+content_type = "text/html; charset=UTF-8"
+format = "html"
+bytes = 5838
+sha256 = "8812f21fa6a79e3dd997e588a2d509f3b6a2e7609680bd6b2969a0be0b1e1454"
+retrieved_at = 2026-11-23T03:31:11Z
+local_path = "data/raw/dvids-2026-fac-groundbreaking/20261123T033111Z.html"
+
+[sources."earthjustice-2026-groups-sue"]
+method = "http"
+url = "https://earthjustice.org/press/2026/groups-sue-to-halt-planned-detonation-at-ammunition-plant-in-iowa"
+final_url = "https://earthjustice.org/press/2026/groups-sue-to-halt-planned-detonation-at-ammunition-plant-in-iowa"
+http_status = 200
+content_type = "text/html; charset=UTF-8"
+format = "html"
+bytes = 497040
+sha256 = "d63668c26a8c7160c651fcfea88214c75845bf6679c383a5ea06c7641e923371"
+retrieved_at = 2026-11-23T03:32:24Z
+local_path = "data/raw/earthjustice-2026-groups-sue/20261123T033224Z.html"
+
+[sources."einpresswire-2026-open-house"]
+method = "http"
+url = "https://www.einnews.com/pr_news/948515222/u-s-army-officials-at-the-iowa-army-ammunition-plant-will-host-a-public-open-house-on-oct-15th"
+final_url = "https://www.einnews.com/pr_news/948515222/u-s-army-officials-at-the-iowa-army-ammunition-plant-will-host-a-public-open-house-on-oct-15th"
+http_status = 200
+content_type = "text/html"
+format = "html"
+bytes = 128474
+sha256 = "b5be9cb3fef8a1a7c4a018270e6822a43168912a28370aadcda694ad16e18dd8"
+retrieved_at = 2026-11-23T03:31:51Z
+local_path = "data/raw/einpresswire-2026-open-house/20261123T033151Z.html"
+
+[sources."epa-1989-npl-site-narrative"]
+method = "http"
+url = "https://semspub.epa.gov/src/document/07/30296138"
+final_url = "https://semspub.epa.gov/work/07/30296138.pdf"
+http_status = 200
+content_type = "application/pdf"
+format = "pdf"
+bytes = 15865
+sha256 = "6a63d895a0c0cf1efb89f65ac42ff7663cd5cb079a9fcaea302da2d8e75f8dc7"
+retrieved_at = 2026-11-23T03:30:29Z
+local_path = "data/raw/epa-1989-npl-site-narrative/20261123T033029Z.pdf"
+
+[sources."epa-1990-federal-facility-agreement"]
+method = "http"
+url = "https://www.epa.gov/system/files/documents/2025-06/iowaarmyammunitionplant_1991.pdf"
+final_url = "https://www.epa.gov/system/files/documents/2025-06/iowaarmyammunitionplant_1991.pdf"
+http_status = 200
+content_type = "application/pdf"
+format = "pdf"
+bytes = 2977443
+sha256 = "fec50c68c8cb2da9fa4fddb554d9c21496e903fd922636b8692d59b989e179bc"
+retrieved_at = 2026-11-23T03:30:29Z
+local_path = "data/raw/epa-1990-federal-facility-agreement/20261123T033029Z.pdf"
+
+[sources."epa-2005-federal-facility-agreement"]
+method = "http"
+url = "https://www.epa.gov/system/files/documents/2025-06/iowaarmyammunitionplant_2006.pdf"
+final_url = "https://www.epa.gov/system/files/documents/2025-06/iowaarmyammunitionplant_2006.pdf"
+http_status = 200
+content_type = "application/pdf"
+format = "pdf"
+bytes = 1549631
+sha256 = "97681e83ca7d9e067018f1f13ac81a707ea46428204a05a99daaed7e501dc30e"
+retrieved_at = 2026-11-23T03:30:31Z
+local_path = "data/raw/epa-2005-federal-facility-agreement/20261123T033031Z.pdf"
+
+[sources."epa-2020-m14-propellant-emergency-permit"]
+method = "http"
+url = "https://19january2021snapshot.epa.gov/ia/iowa-army-ammunition-plant-middletown-iowa_.html"
+final_url = "https://19january2021snapshot.epa.gov/ia/iowa-army-ammunition-plant-middletown-iowa_.html"
+http_status = 200
+content_type = "text/html"
+format = "html"
+bytes = 26252
+sha256 = "e23479aec5707c70056c64bf726bbc69ab11ff6f2385a1574ca8518467dde902"
+retrieved_at = 2026-11-23T03:28:21Z
+local_path = "data/raw/epa-2020-m14-propellant-emergency-permit/20261123T032821Z.html"
+
+[sources."epa-2024-cafo"]
+method = "http"
+url = "https://yosemite.epa.gov/OA/RHC/EPAAdmin.nsf/Filings/F2E8677910CBFEDC85258BA50076F911/$File/US%20Army%20and%20American%20Ordnance%20Consent%20Agreement%20and%20FInal%20Order%202.pdf"
+final_url = "https://yosemite.epa.gov/OA/RHC/EPAAdmin.nsf/Filings/F2E8677910CBFEDC85258BA50076F911/$File/US%20Army%20and%20American%20Ordnance%20Consent%20Agreement%20and%20FInal%20Order%202.pdf"
+http_status = 200
+content_type = "application/pdf"
+format = "pdf"
+bytes = 14414703
+sha256 = "dffbb7391c6d1252a98a6c083cefaf186840a64a5b352de49bcb03b48bb0662a"
+retrieved_at = 2026-11-23T03:28:28Z
+local_path = "data/raw/epa-2024-cafo/20261123T032828Z.pdf"
+
+[sources."epa-2024-cafo-docket-record"]
+method = "http"
+url = "https://yosemite.epa.gov/OA/rhc/EPAAdmin.nsf/6f3c7ca72426e21b852575400050f48e/17bc0e14b70becf085258ba50076f90f!OpenDocument"
+final_url = "https://yosemite.epa.gov/OA/rhc/EPAAdmin.nsf/6f3c7ca72426e21b852575400050f48e/17bc0e14b70becf085258ba50076f90f!OpenDocument"
+http_status = 200
+content_type = "text/html; charset=US-ASCII"
+format = "html"
+bytes = 5678
+sha256 = "70953cf813ad3233870f8e171b98502263840358db1b866d92301a04d41c2b4f"
+retrieved_at = 2026-11-23T03:30:27Z
+local_path = "data/raw/epa-2024-cafo-docket-record/20261123T033027Z.html"
+
+[sources."epa-2024-cafo-notice-of-filing"]
+method = "http"
+url = "https://yosemite.epa.gov/OA/RHC/EPAAdmin.nsf/Filings/DACDAB9F29921BE985258BA50076F92F/$File/US%20Army%20and%20American%20Ordnance%20Notice%20of%20Filing.pdf"
+final_url = "https://yosemite.epa.gov/OA/RHC/EPAAdmin.nsf/Filings/DACDAB9F29921BE985258BA50076F92F/$File/US%20Army%20and%20American%20Ordnance%20Notice%20of%20Filing.pdf"
+http_status = 200
+content_type = "application/pdf"
+format = "pdf"
+bytes = 227217
+sha256 = "cae776fd1534f3e622338211ce56da50f40e1faf858c029ea10ee52f0b06b443"
+retrieved_at = 2026-11-23T03:28:25Z
+local_path = "data/raw/epa-2024-cafo-notice-of-filing/20261123T032825Z.pdf"
+
+[sources."epa-2024-rcra-penalty-release"]
+method = "http"
+url = "https://www.epa.gov/node/294051"
+final_url = "https://www.epa.gov/newsreleases/epa-fines-iowa-army-plant-and-contractor-alleged-hazardous-waste-violations"
+http_status = 200
+content_type = "text/html; charset=UTF-8"
+format = "html"
+bytes = 55316
+sha256 = "1e264959b88c3349c0d0378c3202c652e71466e66cab81cb220671d27e85b466"
+retrieved_at = 2026-11-23T03:28:25Z
+local_path = "data/raw/epa-2024-rcra-penalty-release/20261123T032825Z.html"
+
+[sources."epa-2026-lead-azide-emergency-permit-3"]
+method = "http"
+url = "https://www.epa.gov/node/301607"
+final_url = "https://www.epa.gov/ia/iowa-army-ammunition-plant-middletown-iowa-2"
+http_status = 200
+content_type = "text/html; charset=UTF-8"
+format = "html"
+bytes = 55270
+sha256 = "6c24ff1d6e1b0cc277dd2b2d1cda070f7d0901a1bf78458f4647f0257430aba1"
+retrieved_at = 2026-11-23T03:28:19Z
+local_path = "data/raw/epa-2026-lead-azide-emergency-permit-3/20261123T032819Z.html"
+
+[sources."epa-2026-lead-azide-emergency-permit-4"]
+method = "http"
+url = "https://www.epa.gov/ia/iowa-army-ammunition-plant-middletown-iowa-3"
+final_url = "https://www.epa.gov/ia/iowa-army-ammunition-plant-middletown-iowa-3"
+http_status = 200
+content_type = "text/html; charset=UTF-8"
+format = "html"
+bytes = 56255
+sha256 = "59f6ed3b4cbe7fb0c63d57e4e96187a6c73984ce9a7faf60dc977457f8298fbe"
+retrieved_at = 2026-11-23T03:28:21Z
+local_path = "data/raw/epa-2026-lead-azide-emergency-permit-4/20261123T032821Z.html"
+
+[sources."epa-2026-lead-azide-emergency-permit-4-document"]
+method = "http"
+url = "https://response.epa.gov/sites/17211/files/IAAAP%20Emergency%20Permit%20for%20Treatment%20and%20Storage%20-%20FINAL_Redacted.pdf"
+final_url = "https://response.epa.gov/sites/17211/files/IAAAP%20Emergency%20Permit%20for%20Treatment%20and%20Storage%20-%20FINAL_Redacted.pdf"
+http_status = 200
+content_type = "application/pdf"
+format = "pdf"
+bytes = 7089184
+sha256 = "9c409ac636789c81aac03473481e12c0836e207741b9042ff49818bf69bbbafa"
+retrieved_at = 2026-11-23T03:30:31Z
+local_path = "data/raw/epa-2026-lead-azide-emergency-permit-4-document/20261123T033031Z.pdf"
+
+[sources."epa-2026-r7-letter-governor-reynolds"]
+method = "http"
+url = "https://response.epa.gov/sites/17211/files/R7%20Letter%20to%20Governor%20Reynolds.pdf"
+final_url = "https://response.epa.gov/sites/17211/files/R7%20Letter%20to%20Governor%20Reynolds.pdf"
+http_status = 200
+content_type = "application/pdf"
+format = "pdf"
+bytes = 250668
+sha256 = "3ad157d1db33b19b292fc0898c412d12bf5470b9c280703f11e5209bdd8165fd"
+retrieved_at = 2026-11-23T03:30:52Z
+local_path = "data/raw/epa-2026-r7-letter-governor-reynolds/20261123T033052Z.pdf"
+
+[sources."epa-actions-reduce-lead-exposure"]
+method = "http"
+url = "https://www.epa.gov/lead/actions-reduce-potential-lead-exposure"
+final_url = "https://www.epa.gov/lead/actions-reduce-potential-lead-exposure"
+http_status = 200
+content_type = "text/html; charset=UTF-8"
+format = "html"
+bytes = 83129
+sha256 = "f9531b96973a7de2e5916044444b1f51cfbd11b662b7693762cf60f7d7eae964"
+retrieved_at = 2026-11-23T03:30:57Z
+local_path = "data/raw/epa-actions-reduce-lead-exposure/20261123T033057Z.html"
+
+[sources."epa-echo-facility-report-110041994973"]
+method = "http"
+url = "https://echo.epa.gov/detailed-facility-report?fid=110041994973"
+final_url = "https://echo.epa.gov/detailed-facility-report?fid=110041994973"
+http_status = 200
+content_type = "text/html; charset=UTF-8"
+format = "html"
+bytes = 75542
+sha256 = "e7c2c6413f6eefb01a53352c5f4a6f94131e6b478b8bdd51fa505a33b95f5a55"
+retrieved_at = 2026-11-23T03:30:28Z
+local_path = "data/raw/epa-echo-facility-report-110041994973/20261123T033028Z.html"
+
+[sources."epa-osc-iaaap-lead-azide-site"]
+method = "http"
+url = "https://response.epa.gov/site/site_profile.aspx?site_id=17211"
+final_url = "https://response.epa.gov/site/site_profile.aspx?site_id=17211"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 91660
+sha256 = "254e85afb95a274e1b5fe01243a5e7ee25d4ddc9f5f5747a6c30d15d369a1593"
+retrieved_at = 2026-11-23T03:27:18Z
+local_path = "data/raw/epa-osc-iaaap-lead-azide-site/20261123T032718Z.html"
+
+[sources."fox2detroit-2026-illinois-lead-dust"]
+method = "http"
+url = "https://www.fox2detroit.com/news/illinois-iowa-blast-lead-dust"
+final_url = "https://www.fox2detroit.com/news/illinois-iowa-blast-lead-dust"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 201448
+sha256 = "9ca987270d6ab32b662a724789c05bfbb343b8daff70999bef87583e819de1c9"
+retrieved_at = 2026-11-23T03:32:13Z
+local_path = "data/raw/fox2detroit-2026-illinois-lead-dust/20261123T033213Z.html"
+
+[sources."fox32-2026-illinois-lead-dust"]
+method = "http"
+url = "https://www.fox32chicago.com/news/illinois-iowa-blast-lead-dust"
+final_url = "https://www.fox32chicago.com/news/illinois-iowa-blast-lead-dust"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 207620
+sha256 = "b38cf26f8bcb7a31bcdb60b1676a47e02f47a8c47f4d139c929ee3679c89a264"
+retrieved_at = 2026-11-23T03:32:11Z
+local_path = "data/raw/fox32-2026-illinois-lead-dust/20261123T033211Z.html"
+
+[sources."fox32-2026-what-is-lead-azide"]
+method = "http"
+url = "https://www.fox32chicago.com/news/what-is-lead-azide-from-iowa-army-explosion"
+final_url = "https://www.fox32chicago.com/news/what-is-lead-azide-from-iowa-army-explosion"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 201180
+sha256 = "981bcd44cfaf0330fcb2b2c52e4fbccad1575fc0278fde0340d8b59ee8630d16"
+retrieved_at = 2026-11-23T03:32:13Z
+local_path = "data/raw/fox32-2026-what-is-lead-azide/20261123T033213Z.html"
+
+[sources."fox5dc-2026-illinois-lead-dust"]
+method = "http"
+url = "https://www.fox5dc.com/news/illinois-iowa-blast-lead-dust"
+final_url = "https://www.fox5dc.com/news/illinois-iowa-blast-lead-dust"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 170630
+sha256 = "cb73ac7afbd33deaa312ba6f6de2f4182ccc803ea1cf656472638a6f746a52c3"
+retrieved_at = 2026-11-23T03:32:15Z
+local_path = "data/raw/fox5dc-2026-illinois-lead-dust/20261123T033215Z.html"
+
+[sources."fox5dc-2026-what-is-lead-azide"]
+method = "http"
+url = "https://www.fox5dc.com/news/what-is-lead-azide-from-iowa-army-explosion"
+final_url = "https://www.fox5dc.com/news/what-is-lead-azide-from-iowa-army-explosion"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 161402
+sha256 = "570cbdd3620f0c0b1f8ea35d252421aa4186f02ac9b44295035af068e8494d0e"
+retrieved_at = 2026-11-23T03:32:13Z
+local_path = "data/raw/fox5dc-2026-what-is-lead-azide/20261123T033213Z.html"
+
+[sources."fox6-2026-illinois-lead-dust"]
+method = "http"
+url = "https://www.fox6now.com/news/illinois-iowa-blast-lead-dust"
+final_url = "https://www.fox6now.com/news/illinois-iowa-blast-lead-dust"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 169277
+sha256 = "6b0b165887422db92d88f83d080ab45583103bbead61ce69b6df0e9351872ac3"
+retrieved_at = 2026-11-23T03:32:15Z
+local_path = "data/raw/fox6-2026-illinois-lead-dust/20261123T033215Z.html"
+
+[sources."gao-11-488r"]
+method = "http"
+url = "https://gao.justia.com/department-of-defense/2011/4/military-base-realignments-and-closures-gao-11-488r"
+final_url = "https://gao.justia.com/department-of-defense/2011/4/military-base-realignments-and-closures-gao-11-488r/"
+http_status = 200
+content_type = "text/html"
+format = "html"
+bytes = 79667
+sha256 = "31f1d44f9a03305cf9d98aaaf4d0b0fb7920ed194dc0a2b974fb69c85186a08f"
+retrieved_at = 2026-11-23T03:31:34Z
+local_path = "data/raw/gao-11-488r/20261123T033134Z.html"
+
+[sources."gao-15-538"]
+method = "http"
+url = "https://www.gao.gov/products/gao-15-538"
+final_url = "https://www.gao.gov/products/gao-15-538"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 91808
+sha256 = "99fe6a6d9ed45e305f53a0c4178e41815b7257258749e5648f9473076b43e2b9"
+retrieved_at = 2026-11-23T03:31:35Z
+local_path = "data/raw/gao-15-538/20261123T033135Z.html"
 
 [sources."gao-23-105352"]
 method = "http"
@@ -26,6 +770,138 @@ sha256 = "c9de3c50e939ff8838484e454c1652d7902472b703b2d95d43a1a8b9dd776d85"
 retrieved_at = 2026-11-23T03:22:50Z
 local_path = "data/raw/gao-23-105352/20261123T032250Z.pdf"
 
+[sources."gao-25-107123"]
+method = "http"
+url = "https://www.gao.gov/products/gao-25-107123"
+final_url = "https://www.gao.gov/products/gao-25-107123"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 90961
+sha256 = "1e06a3e0c3ce26a2ada3ada0c7abba001260487e3a7f41e5a0ebfc990223b808"
+retrieved_at = 2026-11-23T03:31:36Z
+local_path = "data/raw/gao-25-107123/20261123T033136Z.html"
+
+[sources."globalsecurity-iaaap"]
+method = "http"
+url = "https://www.globalsecurity.org/military/facility/aap-iowa.htm"
+final_url = "https://www.globalsecurity.org/military/facility/aap-iowa.htm"
+http_status = 200
+content_type = "text/html"
+format = "html"
+bytes = 39217
+sha256 = "72fc529cbe8de926734b9b35fdc3bba2f21cfb119eeee84f62b7ca0fb6a6253a"
+retrieved_at = 2026-11-23T03:31:52Z
+local_path = "data/raw/globalsecurity-iaaap/20261123T033152Z.html"
+
+[sources."grassley-line1-workers-commentary"]
+method = "http"
+url = "https://www.grassley.senate.gov/news/commentary/keeping-government-accountable-0"
+final_url = "https://www.grassley.senate.gov/news/commentary/keeping-government-accountable-0"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 61883
+sha256 = "984b7ba2ab3083e46b8bf44f0a6b5fec1a766a8eccd18327375ff04f72b8c56c"
+retrieved_at = 2026-11-23T03:32:24Z
+local_path = "data/raw/grassley-line1-workers-commentary/20261123T033224Z.html"
+
+[sources."hasc-2022-daly-statement"]
+method = "http"
+url = "https://docs.house.gov/meetings/AS/AS25/20220331/114531/HHRG-117-AS25-Wstate-DalyE-20220331.pdf"
+final_url = "https://docs.house.gov/meetings/AS/AS25/20220331/114531/HHRG-117-AS25-Wstate-DalyE-20220331.pdf"
+http_status = 200
+content_type = "application/pdf"
+format = "pdf"
+bytes = 327407
+sha256 = "f7f3bc0cb766f39271f92724393a869b4ca1598f30a027da8f5ff08155c3d9a6"
+retrieved_at = 2026-11-23T03:31:31Z
+local_path = "data/raw/hasc-2022-daly-statement/20261123T033131Z.pdf"
+
+[sources."highergov-2026-ao-electrical-contract"]
+method = "http"
+url = "https://www.highergov.com/news/american-ordnance-wins-53-million-army-electrical-6490137/"
+final_url = "https://www.highergov.com/news/american-ordnance-wins-53-million-army-electrical-6490137/"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 37855
+sha256 = "b2bfdf969bb8704ff80c3c1eb76bb74bee92150a4e0d0e9dbae1578c3b77093e"
+retrieved_at = 2026-11-23T03:31:53Z
+local_path = "data/raw/highergov-2026-ao-electrical-contract/20261123T033153Z.html"
+
+[sources."highergov-w519tc23f0370"]
+method = "http"
+url = "https://highergov.com/contract/W52P1J09G0001-W519TC23F0370"
+final_url = "https://www.highergov.com/contract/W52P1J09G0001-W519TC23F0370/"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 68529
+sha256 = "7428c163101d1371b8d6801494fe174c0bd356b08147ff35d1bcd836a0dcbfb7"
+retrieved_at = 2026-11-23T03:31:54Z
+local_path = "data/raw/highergov-w519tc23f0370/20261123T033154Z.html"
+
+[sources."highergov-w519tc25f0311"]
+method = "http"
+url = "https://www.highergov.com/contract/W52P1J09G0001-W519TC25F0311"
+final_url = "https://www.highergov.com/contract/W52P1J09G0001-W519TC25F0311/"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 68437
+sha256 = "c083604cb7240d5e64f7bc02eed59dc8ab20861455a5306abcf489b223bc1356"
+retrieved_at = 2026-11-23T03:31:55Z
+local_path = "data/raw/highergov-w519tc25f0311/20261123T033155Z.html"
+
+[sources."highergov-w519tc25f0382"]
+method = "http"
+url = "https://www.highergov.com/contract/W52P1J09G0001-W519TC25F0382"
+final_url = "https://www.highergov.com/contract/W52P1J09G0001-W519TC25F0382/"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 67094
+sha256 = "2e3d065fd8a89fa95ca03787dd04e527980821e78f17c32d54fb324fb9091a68"
+retrieved_at = 2026-11-23T03:31:57Z
+local_path = "data/raw/highergov-w519tc25f0382/20261123T033157Z.html"
+
+[sources."iac-567-53-5"]
+method = "http"
+url = "https://www.legis.iowa.gov/docs/iac/rule/05-14-2025.567.53.5.pdf"
+final_url = "https://www.legis.iowa.gov/docs/iac/rule/05-14-2025.567.53.5.pdf"
+http_status = 200
+content_type = "application/pdf"
+format = "pdf"
+bytes = 662487
+sha256 = "f09b0fb00f84a435f80683c72c5e0f90f8879bb0e9c057841c2cee39a7734c63"
+retrieved_at = 2026-11-23T03:31:31Z
+local_path = "data/raw/iac-567-53-5/20261123T033131Z.pdf"
+
+[sources."iowa-dnr-iaaap-site-summary"]
+method = "http"
+url = "https://www.iowadnr.gov/media/3020/download"
+final_url = "https://www.iowadnr.gov/media/3020/download"
+http_status = 200
+content_type = "application/pdf"
+format = "pdf"
+bytes = 328110
+sha256 = "fbeaf3e0f8dc2ab1ffeec3809ddec1e81499415feeb924f056054f241e2d7a71"
+retrieved_at = 2026-11-23T03:31:46Z
+local_path = "data/raw/iowa-dnr-iaaap-site-summary/20261123T033146Z.pdf"
+
+[sources."iowa-hhs-2026-detonation-fact-sheet"]
+method = "http"
+url = "https://hhs.iowa.gov/media/19822/download"
+final_url = "https://hhs.iowa.gov/media/19822/download"
+http_status = 200
+content_type = "application/pdf"
+format = "pdf"
+bytes = 151306
+sha256 = "764a8690445ecd45b37e489129dd699c21ef5730d53d631ef3553b968c90e0e5"
+retrieved_at = 2026-11-23T03:31:32Z
+local_path = "data/raw/iowa-hhs-2026-detonation-fact-sheet/20261123T033132Z.pdf"
+
 [sources."ipr-2026-army-detonation-risks"]
 method = "http"
 url = "https://www.iowapublicradio.org/environment/2026-11-19/army-lead-detonation-public-health-safety-risks"
@@ -37,3 +913,219 @@ bytes = 196878
 sha256 = "3d107cf4b5e0c1ccfce6e05eca95ae1d27744bb5f23f92a281bcd95f23ee3ea5"
 retrieved_at = 2026-11-23T03:22:50Z
 local_path = "data/raw/ipr-2026-army-detonation-risks/20261123T032250Z.html"
+
+[sources."kcrg-2026-appeals-court-pauses"]
+method = "http"
+url = "https://www.kcrg.com/2026/11/20/appeals-court-pauses-lead-azide-detonation/"
+final_url = "https://www.kcrg.com/2026/11/20/appeals-court-pauses-lead-azide-detonation/"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 250166
+sha256 = "e5ac0d8d66aeb62e3c8d541ac36930af5777c1541ae5685f647cc5a1dda382d0"
+retrieved_at = 2026-11-23T03:32:03Z
+local_path = "data/raw/kcrg-2026-appeals-court-pauses/20261123T033203Z.html"
+
+[sources."militarycom-2026-army-postpones"]
+method = "http"
+url = "https://www.military.com/army-postpones-detonation-of-68-drums-of-lead-azide-in-iowa-heres-why"
+final_url = "https://www.military.com/army-postpones-detonation-of-68-drums-of-lead-azide-in-iowa-heres-why"
+http_status = 200
+content_type = "text/html; charset=UTF-8"
+format = "html"
+bytes = 349914
+sha256 = "1f9285d18c2f236e2dd9842a6325e5b2334010fc5f4830e6b2ba1f4373343acc"
+retrieved_at = 2026-11-23T03:32:09Z
+local_path = "data/raw/militarycom-2026-army-postpones/20261123T033209Z.html"
+
+[sources."niosh-iowa-ordnance-plant-sec"]
+method = "http"
+url = "https://cdc.gov/niosh/ocas/iop.html"
+final_url = "https://www.cdc.gov/niosh/ocas/iop.html"
+http_status = 200
+content_type = "text/html"
+format = "html"
+bytes = 104552
+sha256 = "d67256e075bb9a6566bdaf94ed53791d68a41c8b9f74e972b3bb42065904d2bd"
+retrieved_at = 2026-11-23T03:31:45Z
+local_path = "data/raw/niosh-iowa-ordnance-plant-sec/20261123T033145Z.html"
+
+[sources."ottumwaradio-2026-open-house"]
+method = "http"
+url = "https://ottumwaradio.com/2026/10/army-to-host-public-open-house-on-planned-explosive-disposal-at-iowa-plant/"
+final_url = "https://ottumwaradio.com/2026/10/army-to-host-public-open-house-on-planned-explosive-disposal-at-iowa-plant/"
+http_status = 200
+content_type = "text/html; charset=UTF-8"
+format = "html"
+bytes = 207342
+sha256 = "1eb8561cf91bfb9e5ba8e8273dcbaf5516e4acf7a5cfa3a96a92db37b7870faf"
+retrieved_at = 2026-11-23T03:32:10Z
+local_path = "data/raw/ottumwaradio-2026-open-house/20261123T033210Z.html"
+
+[sources."pbs-2026-iowans-brace-for-lead-dust"]
+method = "http"
+url = "https://www.pbs.org/newshour/nation/iowans-brace-for-lead-dust-cloud-as-army-plans-to-detonate-5-tons-of-bomb-making-chemicals"
+final_url = "https://www.pbs.org/newshour/nation/iowans-brace-for-lead-dust-cloud-as-army-plans-to-detonate-5-tons-of-bomb-making-chemicals"
+http_status = 200
+content_type = "text/html; charset=UTF-8"
+format = "html"
+bytes = 296983
+sha256 = "8f57aab85d510ccbe162352558e11205985278eb03b64e985b2d2f018f40d52c"
+retrieved_at = 2026-11-23T03:32:00Z
+local_path = "data/raw/pbs-2026-iowans-brace-for-lead-dust/20261123T033200Z.html"
+
+[sources."politifact-2026-munitions-supply"]
+method = "http"
+url = "https://api.politifact.com/article/2026/mar/06/Trump-munitions-unlimited-supply-shortage"
+final_url = "https://api.politifact.com/article/2026/mar/06/Trump-munitions-unlimited-supply-shortage/"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 174000
+sha256 = "4ebef97c69ed915bc3b0c1d3296b4a26dae639c1b0c7cc33232e392a24d7e92e"
+retrieved_at = 2026-11-23T03:32:24Z
+local_path = "data/raw/politifact-2026-munitions-supply/20261123T033224Z.html"
+
+[sources."science-lowe-2026-detonating-lead-azide"]
+method = "http"
+url = "https://www.science.org/content/blog-post/detonating-huge-pile-lead-azide-really"
+final_url = "https://www.science.org/content/blog-post/detonating-huge-pile-lead-azide-really"
+http_status = 200
+content_type = "text/html;charset=UTF-8"
+format = "html"
+bytes = 185982
+sha256 = "ddad10ca59729a49f7f5077e4225ae90e2839d9e064106ba87a2209dc542d96e"
+retrieved_at = 2026-11-23T03:32:26Z
+local_path = "data/raw/science-lowe-2026-detonating-lead-azide/20261123T033226Z.html"
+
+[sources."sipri-2026-milex-2025"]
+method = "http"
+url = "https://www.sipri.org/media/press-release/2026/global-military-spending-surges-2025"
+final_url = "https://www.sipri.org/media/press-release/2026/global-military-spending-rise-continues-european-and-asian-expenditures-surge"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 73832
+sha256 = "e4018cfb01996f8e0faea560626a1c93c4f6aca3195612306fb32e58dc4a1abd"
+retrieved_at = 2026-11-23T03:31:51Z
+local_path = "data/raw/sipri-2026-milex-2025/20261123T033151Z.html"
+
+[sources."stripes-2026-munitions-shortages"]
+method = "http"
+url = "https://www.stripes.com/theaters/us/2026-11-19/pentagon-plan-munitions-shortages-watchdog-23519353.html"
+final_url = "https://www.stripes.com/theaters/us/2026-11-19/pentagon-plan-munitions-shortages-watchdog-23519353.html"
+http_status = 200
+content_type = "text/html; charset=UTF-8"
+format = "html"
+bytes = 137088
+sha256 = "70a0e45aa2ccc97350c53fb6caf306fbfbd586534826756cdee41fcfe9d70e40"
+retrieved_at = 2026-11-23T03:32:21Z
+local_path = "data/raw/stripes-2026-munitions-shortages/20261123T033221Z.html"
+
+[sources."suntimes-2026-illinois-lead-plume"]
+method = "http"
+url = "https://chicago.suntimes.com/environment/2026/11/18/illinois-toxic-lead-dust-plume-army-site-explosion-iowa"
+final_url = "https://chicago.suntimes.com/environment/2026/11/18/illinois-toxic-lead-dust-plume-army-site-explosion-iowa"
+http_status = 200
+content_type = "text/html;charset=UTF-8"
+format = "html"
+bytes = 659930
+sha256 = "2edf403ecfa84ae570de0973cfb1e93e6e37f80e443aa05694221983d4f3584c"
+retrieved_at = 2026-11-23T03:32:16Z
+local_path = "data/raw/suntimes-2026-illinois-lead-plume/20261123T033216Z.html"
+
+[sources."thehill-2026-pentagon-munitions-plan"]
+method = "http"
+url = "https://thehill.com/policy/defense/6231155-pentagon-lacks-munitions-plan-gao"
+final_url = "https://thehill.com/policy/defense/6231155-pentagon-lacks-munitions-plan-gao/"
+http_status = 200
+content_type = "text/html; charset=UTF-8"
+format = "html"
+bytes = 394229
+sha256 = "aae06aaeee4e3846e8120e1d946eb418c7342e367ab902f7928016905f780693"
+retrieved_at = 2026-11-23T03:32:22Z
+local_path = "data/raw/thehill-2026-pentagon-munitions-plan/20261123T033222Z.html"
+
+[sources."uiowa-fwp-line1-eeoicpa"]
+method = "http"
+url = "https://iowafwp.public-health.uiowa.edu/line1/EEOICPA.html"
+final_url = "https://iowafwp.public-health.uiowa.edu/line1/EEOICPA.html"
+http_status = 200
+content_type = "text/html"
+format = "html"
+bytes = 10308
+sha256 = "87d3b7ad37a32220e0a50bd0957ddbc7625d266744b77a09fe2e6d2f6ecd776b"
+retrieved_at = 2026-11-23T03:31:52Z
+local_path = "data/raw/uiowa-fwp-line1-eeoicpa/20261123T033152Z.html"
+
+[sources."upi-2026-pentagon-munitions"]
+method = "http"
+url = "https://upi.com/Top_News/US/2026/11/19/pentagon-munitions/5241795122345"
+final_url = "https://www.upi.com/Top_News/US/2026/11/19/pentagon-munitions/5241795122345"
+http_status = 200
+content_type = "text/html; charset=UTF-8"
+format = "html"
+bytes = 308218
+sha256 = "7fe4d5ed7674a36837a7f46f916f336ea41556ce3e61ab8c4bea2e3317d0b4a6"
+retrieved_at = 2026-11-23T03:32:22Z
+local_path = "data/raw/upi-2026-pentagon-munitions/20261123T033222Z.html"
+
+[sources."usace-iaaap-inrmp"]
+method = "http"
+url = "https://www.mvs.usace.army.mil/Portals/54/docs/fusrap/Iowa/Volume%205/6971%20Integrated%20Natural%20REsources%20Management%20Plan%20and%20Environmental%20Assessment.pdf"
+final_url = "https://www.mvs.usace.army.mil/Portals/54/docs/fusrap/Iowa/Volume%205/6971%20Integrated%20Natural%20REsources%20Management%20Plan%20and%20Environmental%20Assessment.pdf"
+http_status = 200
+content_type = "application/pdf"
+format = "pdf"
+bytes = 6445511
+sha256 = "dc62a838a775f0087a87593841a85e118015e98def20107d0da979dc65d24e3b"
+retrieved_at = 2026-11-23T03:31:49Z
+local_path = "data/raw/usace-iaaap-inrmp/20261123T033149Z.pdf"
+
+[sources."washex-2026-army-delay-backlash"]
+method = "http"
+url = "https://www.washingtonexaminer.com/policy/energy-and-environment/4809683/army-delay-iowa-lead-azide-detonation-bipartisan-backlash/"
+final_url = "https://www.washingtonexaminer.com/policy/energy-and-environment/4809683/army-delay-iowa-lead-azide-detonation-bipartisan-backlash/"
+http_status = 200
+content_type = "text/html; charset=UTF-8"
+format = "html"
+bytes = 183713
+sha256 = "a9151e074fe2f115300fd65eada9756b9a95f29b4f5d2b1e027a018189b2eed7"
+retrieved_at = 2026-11-23T03:32:00Z
+local_path = "data/raw/washex-2026-army-delay-backlash/20261123T033200Z.html"
+
+[sources."wbez-2026-illinois-lead-plume"]
+method = "http"
+url = "https://www.wbez.org/environment/2026/11/19/illinois-toxic-lead-dust-plume-army-site-explosion-iowa"
+final_url = "https://www.wbez.org/environment/2026/11/19/illinois-toxic-lead-dust-plume-army-site-explosion-iowa"
+http_status = 200
+content_type = "text/html;charset=UTF-8"
+format = "html"
+bytes = 709298
+sha256 = "703d07c85d0429be6c62fbd1a36f20e20d618499a53bcbea65b2e4df8bdb075a"
+retrieved_at = 2026-11-23T03:32:17Z
+local_path = "data/raw/wbez-2026-illinois-lead-plume/20261123T033217Z.html"
+
+[sources."wqad-2026-lead-azide-timeline"]
+method = "http"
+url = "https://www.yahoo.com/news/us/articles/timeline-know-lead-azide-detonation-005644011.html"
+final_url = "https://www.yahoo.com/news/us/articles/timeline-know-lead-azide-detonation-005644011.html"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 763527
+sha256 = "f718fc2c4bdae22fc4af284d8a07368774ae3be73f806513f8330415f0b55b63"
+retrieved_at = 2026-11-23T03:32:06Z
+local_path = "data/raw/wqad-2026-lead-azide-timeline/20261123T033206Z.html"
+
+[sources."wsws-2026-iowa-lead-azide"]
+method = "http"
+url = "https://www.wsws.org/en/articles/2026/11/20/iowa-n20.html"
+final_url = "https://www.wsws.org/en/articles/2026/11/20/iowa-n20.html"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 174710
+sha256 = "f6d400731829412ba350b7e1213dfe1a642148262df392d3043b2b9cd157cd5f"
+retrieved_at = 2026-11-23T03:32:27Z
+local_path = "data/raw/wsws-2026-iowa-lead-azide/20261123T033227Z.html"
