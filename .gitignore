@@ -16,3 +16,6 @@ wheels/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+
+# Downloaded sources (provenance is in data/manifest/collected.toml)
+data/raw/

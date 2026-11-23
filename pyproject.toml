@@ -12,6 +12,7 @@ dependencies = [
     "anthropic>=2.12.0",
     "databricks-sdk>=0.169.0",
     "fastapi>=0.165.0",
+    "httpx2>=2.16.2",
     "pgvector>=0.5.1",
     "psycopg[binary]>=3.3.9",
     "pydantic>=2.14.4",

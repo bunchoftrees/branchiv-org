@@ -20,6 +20,7 @@ from typing import Literal, get_args
 from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator, model_validator
 
 from branchiv_org.corpus import Document
+from branchiv_org.ingest.lock import Lock, LockError, load_lock
 
 DEFAULT_MANIFEST = Path("data/manifest/sources.toml")
 
@@ -215,15 +216,59 @@ def summarize(manifest: Manifest) -> str:
     )
 
 
+def effective_status(source: Source, lock: Lock) -> Status:
+    """The manifest's status, except that anything in the lock file has been collected."""
+    return "collected" if source.doc_id in lock.sources else source.status
+
+
+def check_lock(manifest: Manifest, lock: Lock) -> list[str]:
+    """Problems joining the lock file to the manifest. Empty means consistent."""
+    known = {s.doc_id for s in manifest.sources}
+    return [
+        f"lock file has {doc_id!r}, which is not in the manifest"
+        for doc_id in sorted(lock.sources)
+        if doc_id not in known
+    ]
+
+
+def summarize_collection(manifest: Manifest, lock: Lock) -> str:
+    statuses = Counter(effective_status(s, lock) for s in manifest.sources)
+    by_id = {s.doc_id: s for s in manifest.sources}
+    url_moved = sorted(
+        doc_id
+        for doc_id, f in lock.sources.items()
+        if doc_id in by_id and by_id[doc_id].url != f.url
+    )
+    missing = sorted(
+        doc_id for doc_id, f in lock.sources.items() if not Path(f.local_path).exists()
+    )
+    lines = [
+        f"  collection (manifest + lock): fetched={len(lock.sources)} "
+        + " ".join(f"{s}={statuses[s]}" for s in get_args(Status)),
+    ]
+    if url_moved:
+        lines.append(f"  url changed in manifest since fetch: {', '.join(url_moved)}")
+    if missing:
+        lines.append(f"  raw file not on this machine: {len(missing)}")
+    return "\n".join(lines)
+
+
 def main(argv: list[str] | None = None) -> int:
     args = sys.argv[1:] if argv is None else argv
     path = Path(args[0]) if args else DEFAULT_MANIFEST
+    lock_path = path.parent / "collected.toml"
     try:
         manifest = load_manifest(path)
-    except ManifestError as e:
+        lock = load_lock(lock_path)
+    except (ManifestError, LockError) as e:
         print(e, file=sys.stderr)
         return 1
+    problems = check_lock(manifest, lock)
+    if problems:
+        print(f"{lock_path}: " + "; ".join(problems), file=sys.stderr)
+        return 1
     print(f"{path}: OK, {summarize(manifest)}")
+    print(summarize_collection(manifest, lock))
     return 0
 
 
