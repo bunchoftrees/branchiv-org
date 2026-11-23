@@ -25,7 +25,7 @@ from branchiv_org.ingest.manifest import Source, check_lock, effective_status, l
 
 PDF = b"%PDF-1.7\n" + b"x" * 2000
 PDF_TYPE = {"content-type": "application/pdf"}
-HTML = b"<!DOCTYPE html><html><body>hello</body></html>"
+HTML = b"<!DOCTYPE html><html><title>Hello</title><body>" + b"hello " * 200 + b"</body></html>"
 
 Handler = Callable[[httpx2.Request], httpx2.Response]
 
@@ -478,3 +478,43 @@ def test_http_fetch_requires_response_fields() -> None:
             retrieved_at=datetime(2026, 1, 1, tzinfo=UTC),
             local_path="x.pdf",
         )
+
+
+# ------------------------------------------------------------- bad HTML pages
+
+
+def page(title: str, body: str) -> bytes:
+    return f"<html><head><title>{title}</title></head><body>{body}</body></html>".encode()
+
+
+ARTICLE = page("Real story", "<p>" + "word " * 300 + "</p>")
+
+
+@pytest.mark.parametrize(
+    ("body", "problem"),
+    [
+        (ARTICLE, None),
+        (page("404 Not Found", "gone"), "error or block"),
+        (page("Just a moment...", "checking"), "error or block"),
+        (page("App", "Please enable JavaScript to view."), "JavaScript"),
+        (page("News", "Subscribe to continue reading."), "paywall"),
+        (page("News", "We use cookies. Accept all cookies?"), "cookie"),
+        (page("App", "<div id=root></div><script>x()</script>"), "no text"),
+    ],
+)
+def test_html_problem(body: bytes, problem: str | None) -> None:
+    from branchiv_org.ingest.collect import html_problem
+
+    found = html_problem(body)
+    if problem is None:
+        assert found is None
+    else:
+        assert found is not None and problem in found
+
+
+def test_suspect_html_fails_but_keeps_the_file(tmp_path: Path, fake_time: FakeTime) -> None:
+    body = b"<html><title>Access Denied</title><body>nope</body></html>"
+    outcome = collector(serve(body, "text/html"), tmp_path, fake_time).collect(source(), None)
+    assert outcome.result == "failed"
+    assert outcome.fetch is None
+    assert len(list((tmp_path / "raw" / "alpha").iterdir())) == 1

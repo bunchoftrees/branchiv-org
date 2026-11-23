@@ -19,7 +19,9 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import html
 import os
+import re
 import shutil
 import sys
 import time
@@ -142,6 +144,49 @@ def describe_plan(plan: Plan) -> str:
 # ------------------------------------------------------------------ fetching
 
 
+_BAD_TITLE = re.compile(
+    r"(?i)\b(404|not found|page not found|access denied|forbidden|just a moment|"
+    r"attention required|captcha|are you a robot|security check|unavailable)\b"
+)
+_JS_NOTICE = re.compile(r"(?i)enable javascript|javascript is (?:disabled|required)")
+_COOKIE_WALL = re.compile(
+    r"(?i)\b(accept|consent)\b.{0,80}\bcookies?\b|\bcookies?\b.{0,80}\bconsent\b"
+)
+_PAYWALL = re.compile(
+    r"(?i)subscribe to (?:continue|read)|to continue reading|already a subscriber"
+)
+MIN_HTML_WORDS = 150
+
+
+def visible_text(page: str) -> str:
+    page = re.sub(r"(?is)<(script|style|noscript|template)\b.*?</\1>", " ", page)
+    return html.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", page))).strip()
+
+
+def html_problem(data: bytes) -> str | None:
+    """Why a saved HTML page is probably not the document: error, block, cookie or JS page.
+
+    Heuristic. A None result means "looks like real content", not a guarantee.
+    """
+    page = data.decode("utf-8", "replace")
+    m = re.search(r"(?is)<title[^>]*>(.*?)</title>", page)
+    title = html.unescape(re.sub(r"\s+", " ", m.group(1))).strip() if m else ""
+    text = visible_text(page)
+    words = len(text.split())
+    if title and _BAD_TITLE.search(title):
+        return f"error or block page (title {title!r})"
+    if words < 400:
+        if _JS_NOTICE.search(text):
+            return f"JavaScript-only page ({words} words)"
+        if _PAYWALL.search(text):
+            return f"paywall ({words} words)"
+        if _COOKIE_WALL.search(text):
+            return f"cookie wall ({words} words)"
+    if words < MIN_HTML_WORDS:
+        return f"almost no text ({words} words), probably a JavaScript shell"
+    return None
+
+
 def detect_format(content_type: str | None, head: bytes) -> FetchedFormat | None:
     """pdf, html or text, from the bytes first and the Content-Type second."""
     if b"%PDF-" in head[:1024]:
@@ -211,6 +256,12 @@ class Collector:
         except FetchFailed as e:
             return Outcome(source.doc_id, "failed", str(e))
 
+        problem = None
+        if fetch.format == "html":
+            problem = html_problem(Path(fetch.local_path).read_bytes())
+        if problem:
+            # Keep the file for a human to look at, but do not record it as collected.
+            return Outcome(source.doc_id, "failed", f"{problem}; saved {fetch.local_path}")
         return reconcile(source, previous, fetch)
 
     def _download(self, doc_id: str, url: str) -> Fetch:
