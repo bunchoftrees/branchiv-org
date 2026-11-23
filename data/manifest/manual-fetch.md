@@ -1,6 +1,6 @@
 # Sources to fetch by hand
 
-Generated after the collector run of 2026-11-23. 94 of 116 sources were downloaded and recorded in `collected.toml`; the 22 below were not.
+Generated after the collector run of 2026-11-23. 95 of 116 sources were downloaded and recorded in `collected.toml`; the 21 below were not. (The 199 MB 2018 RCRA response to comments was fetched on a second run with a 250 MB cap.)
 
 To add a file you downloaded yourself:
 
@@ -81,14 +81,6 @@ The saved HTML is a viewer shell with no document text. It is kept in data/raw/ 
   - Why: FAS mirror returned an empty page. Prefer the congress.gov copy (entry is needs_original).
   - Import: `uv run python -m branchiv_org.ingest.collect import crs-if12251 ~/Downloads/<file>`
 
-## Too large for the default cap (1)
-
-Over the collector's 100 MB limit. Either download it yourself and import it, or re-run with a higher cap: `uv run python -m branchiv_org.ingest.collect --doc-id <doc_id> --max-mb 250`.
-
-- **RCRA hazardous waste permit, response to comments (Sept 2018)** (`epa-2018-rcra-permit-response-to-comments`)
-  - Link: https://www.epa.gov/system/files/documents/2025-05/iowa-army-ammunition-plant.pdf
-  - Why: 199 MB (Content-Length 199,207,292)
-  - Import: `uv run python -m branchiv_org.ingest.collect import epa-2018-rcra-permit-response-to-comments ~/Downloads/<file>`
 
 ## Server error (1)
 
@@ -96,7 +88,7 @@ Probably temporary. Try the collector again later before downloading by hand.
 
 - **Army Materiel Command senior commander page** (`army-redstone-amc-leadership`)
   - Link: https://home.army.mil/redstone/index.php/about/leadership/senior-commander
-  - Why: HTTP 502 after 4 attempts
+  - Why: HTTP 502 after 4 attempts, on two runs (03:31 and 03:41 UTC, Nov 23)
   - Import: `uv run python -m branchiv_org.ingest.collect import army-redstone-amc-leadership ~/Downloads/<file>`
 
 ## Unavailable (1)

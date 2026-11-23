@@ -518,6 +518,18 @@ sha256 = "97681e83ca7d9e067018f1f13ac81a707ea46428204a05a99daaed7e501dc30e"
 retrieved_at = 2026-11-23T03:30:31Z
 local_path = "data/raw/epa-2005-federal-facility-agreement/20261123T033031Z.pdf"
 
+[sources."epa-2018-rcra-permit-response-to-comments"]
+method = "http"
+url = "https://www.epa.gov/system/files/documents/2025-05/iowa-army-ammunition-plant.pdf"
+final_url = "https://www.epa.gov/system/files/documents/2025-05/iowa-army-ammunition-plant.pdf"
+http_status = 200
+content_type = "application/pdf"
+format = "pdf"
+bytes = 199207292
+sha256 = "7a0108c61a47a2797699fb6a52a1483c00d3565fdd63b0cd849db0dd544efd61"
+retrieved_at = 2026-11-23T03:41:37Z
+local_path = "data/raw/epa-2018-rcra-permit-response-to-comments/20261123T034137Z.pdf"
+
 [sources."epa-2020-m14-propellant-emergency-permit"]
 method = "http"
 url = "https://19january2021snapshot.epa.gov/ia/iowa-army-ammunition-plant-middletown-iowa_.html"
