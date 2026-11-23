@@ -3,7 +3,7 @@
 # Validate with: uv run python -m branchiv_org.ingest.manifest
 
 # Bump whenever sources are added, removed or re-fetched.
-snapshot_version = "2026-11-22.1"
+snapshot_version = "2026-11-22.2"
 # Date the statuses and notes below were last checked.
 as_of = 2026-11-22
 
@@ -200,6 +200,82 @@ safety_review = true
 caveats = ["live_page"]
 caveat_note = "EPA's live response site; this reflects the page as of the snapshot date shown, and it may have changed since."
 notes = "Index of EPA response documents (permit notices, sitreps, sampling, fact sheets). Response documents may include technical detail; filter before indexing. Check it for a current link to emergency permit #1."
+
+# Found on the EPA on-scene coordinator site (epa-osc-iaaap-lead-azide-site), 2026-11-23
+
+[[sources]]
+doc_id = "epa-2026-lead-azide-emergency-permit-4-document"
+title = "Emergency permit for treatment and storage (final, redacted)"
+publisher = "U.S. EPA Region 7"
+source_type = "regulatory_record"
+tier = 1
+published = "2026-11-18"
+url = "https://response.epa.gov/sites/17211/files/IAAAP%20Emergency%20Permit%20for%20Treatment%20and%20Storage%20-%20FINAL_Redacted.pdf"
+status = "to_collect"
+verified = true
+safety_review = true
+notes = "The permit itself, as opposed to the notice (epa-2026-lead-azide-emergency-permit-4). The OSC site says it was issued Nov 18; the notice entry has 2026-11-13. Check which is right. Likely describes the treatment method; filter."
+
+[[sources]]
+doc_id = "epa-2026-r7-letter-governor-reynolds"
+title = "EPA Region 7 Administrator letter to Iowa Governor Reynolds on the planned detonation"
+publisher = "U.S. EPA Region 7"
+source_type = "regulatory_record"
+tier = 1
+published = "2026-11-20"
+url = "https://response.epa.gov/sites/17211/files/R7%20Letter%20to%20Governor%20Reynolds.pdf"
+status = "to_collect"
+verified = true
+safety_review = true
+notes = "Posted Nov 20 on the OSC site. The detonation was then scheduled for Nov 23."
+
+[[sources]]
+doc_id = "army-2026-open-house-slides"
+title = "U.S. Army open house slides (IAAAP lead azide)"
+publisher = "U.S. Army"
+source_type = "public_notice"
+tier = 1
+url = "https://d34w7g4gy10iej.cloudfront.net/pubs/pdf_77826.pdf"
+status = "to_collect"
+verified = true
+safety_review = true
+notes = "Linked from the EPA OSC site; hosted on EPA's CloudFront file store. Fill in the date at collection. May describe the detonation method; filter."
+
+[[sources]]
+doc_id = "army-2026-lead-azide-faq-handout"
+title = "U.S. Army FAQ handout (IAAAP lead azide)"
+publisher = "U.S. Army"
+source_type = "public_notice"
+tier = 1
+url = "https://d34w7g4gy10iej.cloudfront.net/pubs/pdf_77827.pdf"
+status = "to_collect"
+verified = true
+safety_review = true
+notes = "Linked from the EPA OSC site; hosted on EPA's CloudFront file store. Fill in the date at collection. May describe the detonation method; filter."
+
+[[sources]]
+doc_id = "army-2026-lead-azide-environmental-handout"
+title = "U.S. Army environmental handout (IAAAP lead azide)"
+publisher = "U.S. Army"
+source_type = "public_notice"
+tier = 1
+url = "https://d34w7g4gy10iej.cloudfront.net/pubs/pdf_77825.pdf"
+status = "to_collect"
+verified = true
+safety_review = true
+notes = "Linked from the EPA OSC site; hosted on EPA's CloudFront file store. Fill in the date at collection. May describe the detonation method; filter."
+
+[[sources]]
+doc_id = "epa-actions-reduce-lead-exposure"
+title = "Actions to reduce potential lead exposure"
+publisher = "U.S. EPA"
+source_type = "public_notice"
+tier = 1
+url = "https://www.epa.gov/lead/actions-reduce-potential-lead-exposure"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "General EPA public-health guidance linked from the OSC site. Fill in the date at collection."
 
 # ------------------------------------------------- Tier 1: Army CERCLA records
 [[sources]]
