@@ -23,6 +23,13 @@ class Settings(BaseSettings):
     judge_model: str = "claude-opus-5-5"
     generation_effort: Effort = "medium"
 
+    # Databricks-served embedding model (GTE Large En v1.5; confirmed READY and 1024-dim
+    # on 2026-11-23). EMBEDDING_DIM must match the vector column in the database
+    # (migration 0002); changing models needs a new migration + re-embed.
+    embedding_endpoint: str = "databricks-gte-large-en"
+    embedding_dim: int = Field(default=1024, ge=1)
+    embedding_batch_size: int = Field(default=32, ge=1)
+
     # A single refusal must never end a session, so the threshold is at least 2.
     refusal_escalation_threshold: int = Field(default=3, ge=2)
     refusal_window_turns: int = Field(default=10, ge=1)

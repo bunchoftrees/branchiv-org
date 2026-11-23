@@ -1,7 +1,8 @@
 from dataclasses import dataclass
+from typing import cast
 
 import pytest
-from sqlalchemy import create_engine, select
+from sqlalchemy import Table, create_engine, select
 from sqlalchemy.orm import Session
 
 from branchiv_org.db import Base
@@ -51,7 +52,8 @@ def test_threshold_below_two_rejected() -> None:
 
 def test_refusal_event_roundtrip_sqlite() -> None:
     engine = create_engine("sqlite:///:memory:")
-    Base.metadata.create_all(engine)
+    # Only this table: other models use Postgres-only types (vector, tsvector).
+    Base.metadata.create_all(engine, tables=[cast(Table, RefusalEvent.__table__)])
     with Session(engine) as session:
         session.add(
             RefusalEvent(
