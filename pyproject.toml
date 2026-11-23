@@ -1,0 +1,47 @@
+[project]
+name = "branchiv-org"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "bunchoftrees", email = "john@johnbear.org" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.165.0",
+    "pgvector>=0.5.1",
+    "psycopg[binary]>=3.3.9",
+    "pydantic>=2.14.4",
+    "pydantic-settings>=2.16.3",
+    "sqlalchemy>=2.1.9",
+]
+
+[project.scripts]
+branchiv-org = "branchiv_org:main"
+
+[build-system]
+requires = ["uv_build>=0.13.9,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=2.4.1",
+    "pre-commit>=4.7.0",
+    "pytest>=9.2.0",
+    "ruff>=0.17.6",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+plugins = ["pydantic.mypy"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
