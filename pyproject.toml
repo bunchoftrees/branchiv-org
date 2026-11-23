@@ -8,6 +8,7 @@ authors = [
 ]
 requires-python = ">=3.12"
 dependencies = [
+    "alembic>=1.20.1",
     "anthropic>=2.12.0",
     "fastapi>=0.165.0",
     "pgvector>=0.5.1",
@@ -46,3 +47,5 @@ plugins = ["pydantic.mypy"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+addopts = "-m 'not integration'"
+markers = ["integration: needs a real Postgres (DATABASE_URL); run with -m integration"]

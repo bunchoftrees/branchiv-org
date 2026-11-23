@@ -1,0 +1,21 @@
+services:
+  db:
+    image: pgvector/pgvector:0.8.7-pg18
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-branchiv}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-branchiv}
+      POSTGRES_DB: ${POSTGRES_DB:-branchiv}
+    ports:
+      # Localhost only. Default 5433 because a host Postgres often already owns 5432.
+      - "127.0.0.1:${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      # Postgres 18+ images keep data under /var/lib/postgresql/<major>/, so mount the parent.
+      - pgdata:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  pgdata:
