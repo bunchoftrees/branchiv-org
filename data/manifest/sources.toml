@@ -1,0 +1,1354 @@
+# Source manifest: every document allowed into the corpus.
+# Field meanings, tier definitions and how to add a source: README.md (same folder).
+# Validate with: uv run python -m branchiv_org.ingest.manifest
+
+# Bump whenever sources are added, removed or re-fetched.
+snapshot_version = "2026-11-22"
+# Date the statuses and notes below were last checked.
+as_of = 2026-11-22
+
+# ---------------------------------------------------------------- Tier 1: EPA
+[[sources]]
+doc_id = "epa-2026-lead-azide-emergency-permit-1"
+title = "Emergency permit #1: storage of lead azide in place (Apr 2 to Jun 30, 2026)"
+publisher = "U.S. EPA Region 7"
+source_type = "permit_notice"
+tier = 1
+published = "2026-04-02"
+url = "https://www.epa.gov/node/299851"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Notice posted May 7. Also request the permit PDF and administrative record."
+
+[[sources]]
+doc_id = "epa-2026-lead-azide-emergency-permit-2"
+title = "Emergency permit #2: storage (Jul 1 to Sep 28, 2026)"
+publisher = "U.S. EPA Region 7"
+source_type = "permit_notice"
+tier = 1
+published = "2026-07-01"
+url = "https://www.epa.gov/node/300666"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Notice Jul 13, no comments accepted."
+
+[[sources]]
+doc_id = "epa-2026-lead-azide-emergency-permit-3"
+title = "Emergency permit #3: storage (Sep 29 to Dec 26, 2026)"
+publisher = "U.S. EPA Region 7"
+source_type = "permit_notice"
+tier = 1
+published = "2026-09-29"
+url = "https://www.epa.gov/node/301607"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Notice Nov 3."
+
+[[sources]]
+doc_id = "epa-2026-lead-azide-emergency-permit-4"
+title = "Emergency permit #4: storage and treatment by in-place intentional detonation"
+publisher = "U.S. EPA Region 7"
+source_type = "permit_notice"
+tier = 1
+published = "2026-11-13"
+url = "https://www.epa.gov/ia/iowa-army-ammunition-plant-middletown-iowa-3"
+status = "to_collect"
+verified = true
+safety_review = true
+notes = "Runs through Feb 11, 2027. May describe treatment method; filter before indexing."
+
+[[sources]]
+doc_id = "epa-2020-m14-propellant-emergency-permit"
+title = "Emergency permit: open burning of unstable M14 propellant (Mar 2, 2020)"
+publisher = "U.S. EPA Region 7"
+source_type = "permit_notice"
+tier = 1
+published = "2020-03-02"
+url = "https://19january2021snapshot.epa.gov/ia/iowa-army-ammunition-plant-middletown-iowa_.html"
+status = "to_collect"
+verified = true
+safety_review = true
+notes = "Archived copy (Jan 2021 EPA snapshot)."
+
+[[sources]]
+doc_id = "epa-2018-rcra-permit-response-to-comments"
+title = "RCRA hazardous waste permit, response to comments (Sept 2018)"
+publisher = "U.S. EPA Region 7"
+source_type = "regulatory_record"
+tier = 1
+published = "2018-09"
+url = "https://www.epa.gov/system/files/documents/2025-05/iowa-army-ammunition-plant.pdf"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "epa-2024-rcra-penalty-release"
+title = "Army and American Ordnance pay $39,311 for alleged RCRA violations"
+publisher = "U.S. EPA"
+source_type = "press_release"
+tier = 1
+published = "2024-12-10"
+url = "https://www.epa.gov/node/294051"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "epa-2024-cafo-notice-of-filing"
+title = "Notice of filing, Consent Agreement and Final Order, RCRA-07-2024-0092"
+publisher = "U.S. EPA Region 7"
+source_type = "regulatory_record"
+tier = 1
+published = "2024-09-27"
+url = "https://yosemite.epa.gov/OA/RHC/EPAAdmin.nsf/Filings/DACDAB9F29921BE985258BA50076F92F/$File/US%20Army%20and%20American%20Ordnance%20Notice%20of%20Filing.pdf"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Lists counsel at Day & Zimmermann."
+
+[[sources]]
+doc_id = "epa-2024-cafo"
+title = "Consent Agreement and Final Order, RCRA-07-2024-0092"
+publisher = "U.S. EPA Region 7"
+source_type = "regulatory_record"
+tier = 1
+published = "2024-09-27"
+url = "https://yosemite.epa.gov/OA/RHC/EPAAdmin.nsf/Filings/F2E8677910CBFEDC85258BA50076F911/$File/US%20Army%20and%20American%20Ordnance%20Consent%20Agreement%20and%20FInal%20Order%202.pdf"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "PDF did not load earlier. Check for a \"neither admit nor deny\" clause."
+
+[[sources]]
+doc_id = "epa-2024-cafo-docket-record"
+title = "Docket record, RCRA-07-2024-0092 (case closed Oct 8, 2024)"
+publisher = "U.S. EPA"
+source_type = "regulatory_record"
+tier = 1
+published = "2024-10-08"
+url = "https://yosemite.epa.gov/OA/rhc/EPAAdmin.nsf/6f3c7ca72426e21b852575400050f48e/17bc0e14b70becf085258ba50076f90f!OpenDocument"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "epa-echo-facility-report-110041994973"
+title = "ECHO detailed facility report, registry ID 110041994973"
+publisher = "U.S. EPA (ECHO)"
+source_type = "reference_data"
+tier = 1
+published = "2026-11-21"
+url = "https://echo.epa.gov/detailed-facility-report?fid=110041994973"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Live page. Save a dated snapshot at ingest; \"published\" is the pull date."
+
+[[sources]]
+doc_id = "epa-1989-npl-site-narrative"
+title = "NPL site narrative, Iowa Army Ammunition Plant"
+publisher = "U.S. EPA"
+source_type = "regulatory_record"
+tier = 1
+published = "1989-07-14"
+url = "https://semspub.epa.gov/src/document/07/30296138"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Alternate URL https://semspub.epa.gov/work/07/30296138.pdf"
+
+[[sources]]
+doc_id = "epa-1990-federal-facility-agreement"
+title = "Federal Facility Agreement, docket VII-F-90-0029"
+publisher = "U.S. EPA and U.S. Army"
+source_type = "regulatory_record"
+tier = 1
+published = "1990-09"
+url = "https://www.epa.gov/system/files/documents/2025-06/iowaarmyammunitionplant_1991.pdf"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "epa-2005-federal-facility-agreement"
+title = "Replacement Federal Facility Agreement, docket CERCLA-07-2005-0378"
+publisher = "U.S. EPA and U.S. Army"
+source_type = "regulatory_record"
+tier = 1
+published = "2005"
+url = "https://www.epa.gov/system/files/documents/2025-06/iowaarmyammunitionplant_2006.pdf"
+status = "to_collect"
+verified = true
+safety_review = false
+
+# ------------------------------------------------- Tier 1: Army CERCLA records
+[[sources]]
+doc_id = "army-2026-ou11-proposed-plan"
+title = "Operable Unit 11 Proposed Plan (final, Apr 2026)"
+publisher = "U.S. Army (IAAAP restoration program)"
+source_type = "regulatory_record"
+tier = 1
+published = "2026-04"
+url = "https://iaaaprestoration.com/wp-content/uploads/11005-PP-OU11_Proposed_Plan_Final-APR2026.pdf"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "army-cc06-remedial-investigation"
+title = "CC-06 supplemental remedial investigation report"
+publisher = "U.S. Army (IAAAP restoration program)"
+source_type = "regulatory_record"
+tier = 1
+url = "https://iaaaprestoration.com/wp-content/uploads/12003-CC-06_SRI_Final_e-deliverable.pdf"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "army-2025-five-year-review-addendum"
+title = "Fourth Five-Year Review (2021), addendum (May 2025)"
+publisher = "U.S. Army (IAAAP restoration program)"
+source_type = "regulatory_record"
+tier = 1
+published = "2025-05"
+url = "https://iaaaprestoration.com/wp-content/uploads/721-5YR-FINAL-2021-Addendum-MAY2025.pdf"
+status = "to_collect"
+verified = true
+safety_review = false
+
+# --------------------------------------------- Tier 1: Army releases and video
+[[sources]]
+doc_id = "army-2014-picatinny-lead-free-primary"
+title = "Picatinny aims for green with new type of primary explosive"
+publisher = "U.S. Army (army.mil)"
+source_type = "press_release"
+tier = 1
+published = "2014-03-21"
+url = "https://www.army.mil/article/122127/picatinny_aims_for_green_with_new_type_of_primary_explosive"
+status = "to_collect"
+verified = true
+safety_review = true
+notes = "Key source on the \"40-year-old\" deteriorating stockpile. Contains chemistry; filter."
+
+[[sources]]
+doc_id = "army-2017-iaaap-new-commander"
+title = "Iowa Army Ammunition Plant welcomes new commander"
+publisher = "U.S. Army (army.mil)"
+source_type = "press_release"
+tier = 1
+url = "https://www.army.mil/article/187930/iowa_army_ammunition_plant_welcomes_new_commander"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Cited for American Ordnance history. Fill in the date at collection."
+
+[[sources]]
+doc_id = "army-2019-iaaap-new-senior-leader"
+title = "Iowa Army Ammunition Plant welcomes new senior leader"
+publisher = "U.S. Army (army.mil)"
+source_type = "press_release"
+tier = 1
+url = "https://www.army.mil/article/223063/iowa_army_ammunition_plant_welcomes_new_senior_leader"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Establishes IAAAP as a JMC subordinate installation. Fill in the date at collection."
+
+[[sources]]
+doc_id = "army-2025-future-artillery-complex-award"
+title = "Army invests $635M in artillery ammunition production facility"
+publisher = "U.S. Army (army.mil)"
+source_type = "press_release"
+tier = 1
+published = "2025-08-20"
+url = "https://www.army.mil/article/287951/army_invests_635m_in_cutting_edge_artillery_ammunition_production_facility"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "army-2026-jmc-casing-of-colors"
+title = "Joint Munitions Command cases its colors; mission folds into ASC"
+publisher = "U.S. Army (army.mil)"
+source_type = "press_release"
+tier = 1
+published = "2026-06-10"
+url = "https://www.army.mil/article/293166"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "army-2026-fac-groundbreaking-article"
+title = "Future Artillery Complex groundbreaking"
+publisher = "U.S. Army (army.mil)"
+source_type = "press_release"
+tier = 1
+published = "2026-07-15"
+url = "https://www.army.mil/article/294057"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "army-2026-groundwater-cleanup-progress"
+title = "Iowa Army Ammunition Plant reports big step forward in groundwater cleanup"
+publisher = "U.S. Army (army.mil)"
+source_type = "press_release"
+tier = 1
+published = "2026-09-02"
+url = "https://www.army.mil/article/295059/iowa_army_ammunition_plant_reports_big_step_forward_in_groundwater_cleanup"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "The Army's own account."
+
+[[sources]]
+doc_id = "army-2026-open-house-lead-azide"
+title = "IAAAP hosts open house, shares lead azide detonation information"
+publisher = "U.S. Army (army.mil)"
+source_type = "press_release"
+tier = 1
+published = "2026-10-28"
+url = "https://www.army.mil/article/296388/iaaap_hosts_open_house_shares_lead_azide_detonation_information"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "dvids-2026-fac-groundbreaking"
+title = "Future Artillery Complex groundbreaking (printable)"
+publisher = "DVIDS / U.S. Army"
+source_type = "press_release"
+tier = 1
+published = "2026-07-15"
+url = "https://www.dvidshub.net/news/printable/570528"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "dvids-2026-fac-cannon-fire-video"
+title = "Canons fire in celebration of the groundbreaking for the new Future Artillery Complex"
+publisher = "DVIDS / U.S. Army Sustainment Command"
+source_type = "video"
+tier = 1
+published = "2026-07-15"
+url = "https://www.dvidshub.net/video/1014812/canons-fire-celebration-groundbreaking-new-future-artillery-complex-fac-iowa-army-ammunition-plant"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Video. Index the page description and metadata only."
+
+[[sources]]
+doc_id = "dvids-2026-asc-leadership"
+title = "U.S. Army Sustainment Command leadership (Maj. Gen. Eric P. Shirley)"
+publisher = "DVIDS / U.S. Army"
+source_type = "press_release"
+tier = 1
+published = "2026-06"
+url = "https://www.dvidshub.net/news/printable/567812"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "army-redstone-amc-leadership"
+title = "Army Materiel Command senior commander page"
+publisher = "U.S. Army (Redstone Arsenal)"
+source_type = "reference_data"
+tier = 1
+url = "https://home.army.mil/redstone/index.php/about/leadership/senior-commander"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Live page. Save a dated snapshot at ingest."
+
+# ---------------------------------------- Tier 1: Congress, courts, statutes
+[[sources]]
+doc_id = "hasc-2022-daly-statement"
+title = "Written statement to House Armed Services on AAP modernization (Mar 31, 2022)"
+publisher = "U.S. House Armed Services Committee"
+source_type = "testimony"
+tier = 1
+published = "2022-03-31"
+url = "https://docs.house.gov/meetings/AS/AS25/20220331/114531/HHRG-117-AS25-Wstate-DalyE-20220331.pdf"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "ca8-2026-lead-azide-docket"
+title = "8th Circuit petition and docket (Iowa Environmental Council and Sierra Club v. EPA)"
+publisher = "U.S. Court of Appeals for the 8th Circuit"
+source_type = "court_filing"
+tier = 1
+published = "2026-11-19"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Get from PACER. Includes EPA's Nov 20 response and the DOJ Nov 21 filing."
+
+[[sources]]
+doc_id = "iac-567-53-5"
+title = "Iowa Administrative Code 567—53.5(4): protected water sources"
+publisher = "Iowa Legislature"
+source_type = "legal_code"
+tier = 1
+published = "2025-05-14"
+url = "https://www.legis.iowa.gov/docs/iac/rule/05-14-2025.567.53.5.pdf"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "dol-2005-eeoicpa-bulletin-05-06"
+title = "EEOICPA Bulletin 05-06: IAAP Special Exposure Cohort, 1949-1974"
+publisher = "U.S. Department of Labor"
+source_type = "regulatory_record"
+tier = 1
+published = "2005-06-19"
+url = "https://www.dol.gov/agencies/owcp/energy/regs/compliance/PolicyandProcedures/finalbulletinshtml/Bulletin05-06ProcessingIAAPSECClass1949-1974Claims"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "iowa-hhs-2026-detonation-fact-sheet"
+title = "Planned detonation fact sheet"
+publisher = "Iowa HHS"
+source_type = "public_notice"
+tier = 1
+published = "2026-11-20"
+url = "https://hhs.iowa.gov/media/19822/download"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Official public-safety notice. Return verbatim with a link, per the safety design."
+
+[[sources]]
+doc_id = "idph-2024-lead-testing-zip-codes"
+title = "IDPH adds nearly 150 more high-risk ZIP codes to lead testing list"
+publisher = "Illinois Department of Public Health"
+source_type = "press_release"
+tier = 1
+published = "2024-07"
+url = "https://www2.illinois.gov/IISNews/30185-IDPH_Adds_Nearly_150_More_High-Risk_ZIP_Codes_to_Lead_Testing_List.pdf"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "iepa-idph-2026-detonation-statement"
+title = "Illinois EPA and IDPH statement on the planned Iowa detonation"
+publisher = "Illinois EPA / IDPH"
+source_type = "press_release"
+tier = 1
+published = "2026-11"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Original release on illinois.gov not found yet; quoted by FOX 32 and the Sun-Times."
+
+[[sources]]
+doc_id = "duckworth-2026-ria-workforce-letter"
+title = "Duckworth, Durbin, Grassley and Sorensen demand answers on Rock Island Arsenal reassignments"
+publisher = "Office of Sen. Tammy Duckworth"
+source_type = "press_release"
+tier = 1
+published = "2026-04-21"
+url = "https://www.duckworth.senate.gov/news/press-releases/duckworth-durbin-grassley-and-sorensen-demand-answers-from-army-on-rock-island-arsenal-workforce-reassignments"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "durbin-2025-ria-support"
+title = "Durbin, Duckworth, Grassley lead Quad Cities lawmakers in support for Rock Island Arsenal"
+publisher = "Office of Sen. Dick Durbin"
+source_type = "press_release"
+tier = 1
+published = "2025-06"
+url = "https://www.durbin.senate.gov/newsroom/press-releases/durbin-duckworth-grassley-lead-quad-cities-lawmakers-in-support-for-rock-island-arsenal"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "usaspending-w52p1j09g0001"
+title = "USAspending award record, ordering agreement W52P1J09G0001"
+publisher = "USAspending.gov"
+source_type = "contract_record"
+tier = 1
+url = "https://www.usaspending.gov/award/CONT_AWD_W519TC25F0417_9700_W52P1J09G0001_9700"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Live record. Save a dated snapshot at ingest."
+
+# ---------------------------------------------- Tier 2: GAO, IG, CRS reports
+[[sources]]
+doc_id = "gao-11-488r"
+title = "GAO-11-488R: Military base realignments and closures (Iowa and Milan facility contract)"
+publisher = "U.S. GAO"
+source_type = "oversight_report"
+tier = 2
+published = "2011-04-01"
+url = "https://gao.justia.com/department-of-defense/2011/4/military-base-realignments-and-closures-gao-11-488r"
+status = "needs_original"
+verified = true
+safety_review = false
+notes = "Justia copy. Get the gao.gov original."
+
+[[sources]]
+doc_id = "gao-15-538"
+title = "GAO-15-538: Conventional ammunition demilitarization"
+publisher = "U.S. GAO"
+source_type = "oversight_report"
+tier = 2
+published = "2015"
+url = "https://www.gao.gov/products/gao-15-538"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "gao-23-105352"
+title = "GAO-23-105352: Army ammunition plants, facility use contracts"
+publisher = "U.S. GAO"
+source_type = "oversight_report"
+tier = 2
+published = "2022-10-13"
+url = "https://www.gao.gov/assets/gao-23-105352.pdf"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "gao-25-107123"
+title = "GAO-25-107123: DoD financial management and ammunition accountability"
+publisher = "U.S. GAO"
+source_type = "oversight_report"
+tier = 2
+published = "2025-09-04"
+url = "https://www.gao.gov/products/gao-25-107123"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "gao-2026-munitions-shortages"
+title = "DoD Munitions: Planning and Leadership Needed to Address Persistent Shortages"
+publisher = "U.S. GAO"
+source_type = "oversight_report"
+tier = 2
+published = "2026-11-19"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Report number not found yet. Reported by Stars and Stripes and UPI."
+
+[[sources]]
+doc_id = "dodig-2022-013"
+title = "DODIG-2022-013: Open burning/open detonation compliance at GOCO plants"
+publisher = "DoD Office of Inspector General"
+source_type = "oversight_report"
+tier = 2
+published = "2021-11-04"
+url = "https://media.defense.gov/2021/Nov/08/2002888749/-1/-1/1/DODIG-2022-013_REDACTED.PDF"
+status = "to_collect"
+verified = true
+safety_review = true
+notes = "Redacted release. Closest parallel to the oversight failure. May describe OB/OD methods."
+
+[[sources]]
+doc_id = "dodig-2025-153"
+title = "DODIG-2025-153: Summary of munitions oversight reports"
+publisher = "DoD Office of Inspector General"
+source_type = "oversight_report"
+tier = 2
+published = "2025"
+url = "https://www.dodig.mil/In-the-Spotlight/Article/4297643/index.html"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "dowig-2026-095"
+title = "DOWIG-2026-095: 155mm production evaluation"
+publisher = "DoD Office of Inspector General"
+source_type = "oversight_report"
+tier = 2
+published = "2026-07-09"
+url = "https://www.oversight.gov/sites/default/files/documents/reports/2026-07/DOWIG-2026-095%20155-mm_Redacted_Secure.pdf"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Released as CUI with redactions."
+
+[[sources]]
+doc_id = "crs-if12251"
+title = "CRS IF12251: Army organic industrial base"
+publisher = "Congressional Research Service"
+source_type = "crs_report"
+tier = 2
+url = "https://sgp.fas.org/crs/natsec/IF12251.pdf"
+status = "needs_original"
+verified = true
+safety_review = false
+notes = "FAS mirror. Prefer the congress.gov copy if available."
+
+# ------------------------------------- Tier 2: health and environmental agencies
+[[sources]]
+doc_id = "atsdr-1999-public-health-assessment"
+title = "ATSDR Public Health Assessment, Iowa Army Ammunition Plant"
+publisher = "ATSDR"
+source_type = "health_assessment"
+tier = 2
+published = "1999-12-28"
+url = "https://webarchive.library.unt.edu/eot2008/20090506010334/http://www.atsdr.cdc.gov/hac/pha/iowaarmy/iaa_toc.html"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Archived copy (UNT End of Term archive)."
+
+[[sources]]
+doc_id = "atsdr-2003-beryllium-du-consultation"
+title = "ATSDR Health Consultation: beryllium and depleted uranium"
+publisher = "ATSDR"
+source_type = "health_assessment"
+tier = 2
+published = "2003"
+url = "https://cswab.org/wp-content/uploads/2017/04/Iowa-Army-Ammunition-Plant-ATSDR-Beryllium-and-Depleted-Uranium-2003.pdf"
+status = "needs_original"
+verified = true
+safety_review = false
+notes = "Hosted by an advocacy group. Locate the ATSDR original before citing."
+
+[[sources]]
+doc_id = "atsdr-2013-letter-health-consultation"
+title = "ATSDR Letter Health Consultation, off-site wells and streams"
+publisher = "ATSDR"
+source_type = "health_assessment"
+tier = 2
+published = "2013-09-19"
+url = "https://www.atsdr.cdc.gov/hac/pha/iowaarmyammunitionplant/iowaarmyammunitionplantlhc09192013_508.pdf"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "niosh-iowa-ordnance-plant-sec"
+title = "NIOSH Iowa Ordnance Plant Special Exposure Cohort page"
+publisher = "NIOSH"
+source_type = "reference_data"
+tier = 2
+published = "2005"
+url = "https://cdc.gov/niosh/ocas/iop.html"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "iowa-dnr-iaaap-site-summary"
+title = "Iowa DNR site summary, Iowa Army Ammunition Plant"
+publisher = "Iowa DNR"
+source_type = "gov_report"
+tier = 2
+url = "https://www.iowadnr.gov/media/3020/download"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Lists lead azide among wastes from munitions production."
+
+# ---------------------------- Tier 2: Army histories, technical papers, plans
+[[sources]]
+doc_id = "army-osc-fy2000-history"
+title = "Operations Support Command annual history, FY2000"
+publisher = "U.S. Army Operations Support Command"
+source_type = "command_history"
+tier = 2
+published = "2000"
+url = "https://webarchive.library.unt.edu/web/20130214190821/http://www.osc.army.mil/supportingdocs/fy00.pdf"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Archived copy."
+
+[[sources]]
+doc_id = "army-afsc-jmc-fy2003-history"
+title = "AFSC/JMC annual history, FY2003"
+publisher = "U.S. Army Field Support Command / Joint Munitions Command"
+source_type = "command_history"
+tier = 2
+published = "2003"
+url = "https://webarchive.library.unt.edu/web/20130214190821/http://www.osc.army.mil/supportingdocs/fy03.pdf"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "The dossier cites the same archived URL as FY2000. Confirm the correct FY2003 link at collection."
+
+[[sources]]
+doc_id = "army-asc-lineage-oib"
+title = "Army Sustainment Command lineage, organic industrial base"
+publisher = "U.S. Army Sustainment Command"
+source_type = "command_history"
+tier = 2
+url = "https://www.aschq.army.mil/About/History/Lineage/OIB/"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "brac-2005-iaaap-installation-summary"
+title = "BRAC 2005 installation summary, Iowa Army Ammunition Plant"
+publisher = "U.S. Army / BRAC Commission"
+source_type = "gov_report"
+tier = 2
+published = "2005"
+url = "https://digital.library.unt.edu/ark:/67531/metadc21491/m2/1/high_res_d/BRAC-2005_09242.pdf"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Same record also at https://digital.library.unt.edu/ark:/67531/metadc21491/m1/1/"
+
+[[sources]]
+doc_id = "usace-iaaap-inrmp"
+title = "Integrated Natural Resources Management Plan and Environmental Assessment"
+publisher = "U.S. Army Corps of Engineers"
+source_type = "gov_report"
+tier = 2
+url = "https://www.mvs.usace.army.mil/Portals/54/docs/fusrap/Iowa/Volume%205/6971%20Integrated%20Natural%20REsources%20Management%20Plan%20and%20Environmental%20Assessment.pdf"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "ddesb-1984-shaneyfelt-complexities-of-lead-azide"
+title = "Complexities of Lead Azide (Shaneyfelt, DDESB Explosives Safety Seminar, Aug 29, 1984)"
+publisher = "DoD Explosives Safety Board"
+source_type = "technical_paper"
+tier = 2
+published = "1984-08-29"
+url = "https://apps.dtic.mil/sti/pdfs/ADP004872.pdf"
+status = "unavailable"
+verified = true
+safety_review = true
+notes = "DTIC public access offline since late summer 2026. Try NTIS, a library or FOIA (Distribution A). Also in the full proceedings at https://apps.dtic.mil/sti/pdfs/ADA152150.pdf (starts p. 1143). Describes storage and destruction methods: index only the storage-history and warning passages that pass the safety filter. The Scribd copy is for reading only; never cite it."
+
+[[sources]]
+doc_id = "sipri-2026-milex-2025"
+title = "Global military spending surges (2025 data) and fact sheet"
+publisher = "SIPRI"
+source_type = "gov_report"
+tier = 2
+published = "2026-04-27"
+url = "https://www.sipri.org/media/press-release/2026/global-military-spending-surges-2025"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Independent research institute. Fact sheet https://www.sipri.org/sites/default/files/2026-04/2604_milex_2025.pdf"
+
+# --------------------------------------------------- Tier 3: contract data
+[[sources]]
+doc_id = "highergov-2026-ao-electrical-contract"
+title = "American Ordnance wins $53 million Army electrical contract"
+publisher = "HigherGov"
+source_type = "contract_data"
+tier = 3
+published = "2026-09-30"
+url = "https://www.highergov.com/news/american-ordnance-wins-53-million-army-electrical-6490137/"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Confirm on defense.gov contract announcements or USAspending before citing as fact."
+
+[[sources]]
+doc_id = "highergov-w519tc23f0370"
+title = "Contract W519TC23F0370: Line 3A modernization"
+publisher = "HigherGov"
+source_type = "contract_data"
+tier = 3
+published = "2023-08"
+url = "https://highergov.com/contract/W52P1J09G0001-W519TC23F0370"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "highergov-w519tc25f0311"
+title = "Contract W519TC25F0311: 155mm efficiency upgrades, Line 1"
+publisher = "HigherGov"
+source_type = "contract_data"
+tier = 3
+published = "2025-07"
+url = "https://www.highergov.com/contract/W52P1J09G0001-W519TC25F0311"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "highergov-w519tc25f0382"
+title = "Contract W519TC25F0382: C Yard rail upgrades"
+publisher = "HigherGov"
+source_type = "contract_data"
+tier = 3
+published = "2025-09"
+url = "https://www.highergov.com/contract/W52P1J09G0001-W519TC25F0382"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "defensedaily-2023-ao-line-3a"
+title = "Contract award: American Ordnance LLC, Line 3A modernization"
+publisher = "Defense Daily"
+source_type = "contract_data"
+tier = 3
+published = "2023-08"
+url = "https://defensedaily.com/contract-awards/contract-award-american-ordnance-llc-middletown-iowa-24683179"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "militaryleak-2021-ao-c4-contract"
+title = "American Ordnance awarded $304 million contract for extrudable C-4"
+publisher = "Military Leak"
+source_type = "contract_data"
+tier = 3
+published = "2021-05-16"
+url = "https://militaryleak.com/2021/05/16/american-ordnance-awarded-304-million-contract-for-the-family-of-extrudable-c-4-items/"
+status = "needs_original"
+verified = false
+safety_review = false
+notes = "Confirm on defense.gov."
+
+# -------------------------------------------------------------- Tier 3: news
+[[sources]]
+doc_id = "cen-2026-lead-azide-detonation"
+title = "Army plans to detonate lead azide, raising toxic plume concerns"
+publisher = "C&EN"
+source_type = "news"
+tier = 3
+published = "2026-11-20"
+url = "https://cen.acs.org/environment/lead-azide-army-explosive-detonate-toxic-plume/104/web/2026/11"
+status = "to_collect"
+verified = true
+safety_review = true
+notes = "Chemistry outlet. Cites the Des Moines Register on the 120 barrels."
+
+[[sources]]
+doc_id = "pbs-2026-iowans-brace-for-lead-dust"
+title = "Iowans brace for lead dust cloud as Army plans to detonate 5 tons of bomb-making chemicals"
+publisher = "PBS NewsHour (AP)"
+source_type = "news"
+tier = 3
+published = "2026-11"
+url = "https://www.pbs.org/newshour/nation/iowans-brace-for-lead-dust-cloud-as-army-plans-to-detonate-5-tons-of-bomb-making-chemicals"
+status = "to_collect"
+verified = true
+safety_review = true
+notes = "Quotes Army Sustainment Command on storage (68 drums, ethanol-water bath)."
+
+[[sources]]
+doc_id = "washex-2026-army-delay-backlash"
+title = "Army delays Iowa lead azide detonation amid bipartisan backlash"
+publisher = "Washington Examiner"
+source_type = "news"
+tier = 3
+published = "2026-11"
+url = "https://www.washingtonexaminer.com/policy/energy-and-environment/4809683/army-delay-iowa-lead-azide-detonation-bipartisan-backlash/"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "abc-2026-appeals-court-blocks-detonation"
+title = "Federal appeals court temporarily blocks controlled detonation in Iowa"
+publisher = "ABC News"
+source_type = "news"
+tier = 3
+published = "2026-11-19"
+url = "https://abcnews.com/US/federal-appeals-court-temporarily-blocks-controlled-detonation-iowa/story?id=138321357"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "abc-2026-iowa-army-plant-detonation"
+title = "Iowa Army plant lead azide detonation (Telle postponement)"
+publisher = "ABC News"
+source_type = "news"
+tier = 3
+published = "2026-11-19"
+url = "https://abcnews.com/US/iowa-army-plant-lead-azide-detonation/story?id=138261613"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "abc6-2026-lead-azide-plume-illinois"
+title = "Lead azide detonation could send dust plume into Illinois"
+publisher = "6abc / ABC News"
+source_type = "news"
+tier = 3
+published = "2026-11"
+url = "https://6abc.com/story/10000-pounds-lead-azide-detonated-iowa-army-plant-causing-dust-plume-illinois/20055102/"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "kcrg-2026-appeals-court-pauses"
+title = "Appeals court pauses lead azide detonation"
+publisher = "KCRG"
+source_type = "news"
+tier = 3
+published = "2026-11-20"
+url = "https://www.kcrg.com/2026/11/20/appeals-court-pauses-lead-azide-detonation/"
+status = "to_collect"
+verified = false
+safety_review = false
+notes = "The claim that EPA said the Army may proceed without the permit is no longer on the page. Unverified until the filing is found."
+
+[[sources]]
+doc_id = "dakotanewsnow-2026-appeals-court-pauses"
+title = "Appeals court pauses lead azide detonation"
+publisher = "Dakota News Now (KCRG)"
+source_type = "news"
+tier = 3
+published = "2026-11-20"
+url = "https://www.dakotanewsnow.com/2026/11/20/appeals-court-pauses-lead-azide-detonation/"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "reuters-2026-doj-detonate-without-permit"
+title = "DOJ tells 8th Circuit the Army will detonate without a permit"
+publisher = "Reuters (Jack Queen)"
+source_type = "news"
+tier = 3
+published = "2026-11-22"
+local_path = "data/sources/reuters-2026-doj-detonate-without-permit.pdf"
+format = "pdf"
+status = "collected"
+verified = true
+safety_review = false
+notes = "Saved as a PDF; add the article link, and add the PDF at local_path before ingest. Get the underlying filing from PACER (ca8-2026-lead-azide-docket)."
+
+[[sources]]
+doc_id = "ipr-2026-army-detonation-risks"
+title = "Army lead detonation public health and safety risks"
+publisher = "Iowa Public Radio"
+source_type = "news"
+tier = 3
+published = "2026-11-19"
+url = "https://www.iowapublicradio.org/environment/2026-11-19/army-lead-detonation-public-health-safety-risks"
+status = "to_collect"
+verified = true
+safety_review = true
+notes = "Cites the Army's environmental assessment on neutralization alternatives."
+
+[[sources]]
+doc_id = "wqad-2026-lead-azide-timeline"
+title = "Timeline of the lead azide detonation"
+publisher = "WQAD (via Yahoo News)"
+source_type = "news"
+tier = 3
+published = "2026-11"
+url = "https://www.yahoo.com/news/us/articles/timeline-know-lead-azide-detonation-005644011.html"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "dmr-2026-plant-temporarily-closes"
+title = "Iowa ammunition plant temporarily closes"
+publisher = "Des Moines Register (via Yahoo News)"
+source_type = "news"
+tier = 3
+published = "2026-03-12"
+url = "https://www.yahoo.com/news/articles/iowa-ammunition-plant-temporarily-closes-222200341.html"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "cbs2iowa-2026-lead-azide-timeline"
+title = "Timeline: what we know regarding the lead azide detonation"
+publisher = "CBS2 Iowa"
+source_type = "news"
+tier = 3
+published = "2026-11"
+url = "https://cbs2iowa.com/news/local/timeline-what-we-know-regarding-the-lead-azide-detonation"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "militarycom-2026-army-postpones"
+title = "Army postpones detonation of 68 drums of lead azide in Iowa"
+publisher = "Military.com"
+source_type = "news"
+tier = 3
+published = "2026-11"
+url = "https://www.military.com/army-postpones-detonation-of-68-drums-of-lead-azide-in-iowa-heres-why"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "ottumwaradio-2026-open-house"
+title = "Army to host public open house on planned explosive disposal at Iowa plant"
+publisher = "Ottumwa Radio"
+source_type = "news"
+tier = 3
+published = "2026-10-08"
+url = "https://ottumwaradio.com/2026/10/army-to-host-public-open-house-on-planned-explosive-disposal-at-iowa-plant/"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "einpresswire-2026-open-house"
+title = "Army officials at IAAAP will host a public open house on Oct 15"
+publisher = "EIN Presswire"
+source_type = "press_release"
+tier = 3
+published = "2026-10-09"
+url = "https://www.einnews.com/pr_news/948515222/u-s-army-officials-at-the-iowa-army-ammunition-plant-will-host-a-public-open-house-on-oct-15th"
+status = "needs_original"
+verified = true
+safety_review = false
+notes = "Wire copy of an Army announcement. Find the army.mil or DVIDS original."
+
+[[sources]]
+doc_id = "axios-2026-iowa-officials-notice"
+title = "Iowa officials on the Middletown lead azide detonation"
+publisher = "Axios Des Moines"
+source_type = "news"
+tier = 3
+published = "2026-11-19"
+url = "https://axios.com/local/des-moines/2026/11/19/iowa-middletown-lead-azide-rob-sand-josh-turek"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "fox32-2026-illinois-lead-dust"
+title = "Illinois officials warn of lead dust from Iowa blast"
+publisher = "FOX 32 Chicago"
+source_type = "news"
+tier = 3
+published = "2026-11"
+url = "https://www.fox32chicago.com/news/illinois-iowa-blast-lead-dust"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "fox32-2026-what-is-lead-azide"
+title = "What is lead azide?"
+publisher = "FOX 32 Chicago"
+source_type = "news"
+tier = 3
+published = "2026-11"
+url = "https://www.fox32chicago.com/news/what-is-lead-azide-from-iowa-army-explosion"
+status = "to_collect"
+verified = true
+safety_review = true
+notes = "Explainer about the material. Only the mitigation-measure passages are in scope."
+
+[[sources]]
+doc_id = "fox2detroit-2026-illinois-lead-dust"
+title = "Illinois officials warn of lead dust from Iowa blast (Mercer County modeling)"
+publisher = "FOX 2 Detroit"
+source_type = "news"
+tier = 3
+published = "2026-11"
+url = "https://www.fox2detroit.com/news/illinois-iowa-blast-lead-dust"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "fox5dc-2026-what-is-lead-azide"
+title = "What is lead azide? (plume maps)"
+publisher = "FOX 5 DC"
+source_type = "news"
+tier = 3
+published = "2026-11"
+url = "https://www.fox5dc.com/news/what-is-lead-azide-from-iowa-army-explosion"
+status = "to_collect"
+verified = true
+safety_review = true
+
+[[sources]]
+doc_id = "fox5dc-2026-illinois-lead-dust"
+title = "Illinois officials warn of lead dust from Iowa blast (IDPH director)"
+publisher = "FOX 5 DC"
+source_type = "news"
+tier = 3
+published = "2026-11"
+url = "https://www.fox5dc.com/news/illinois-iowa-blast-lead-dust"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "fox6-2026-illinois-lead-dust"
+title = "Illinois officials warn of lead dust from Iowa blast (claims process)"
+publisher = "FOX 6 Milwaukee"
+source_type = "news"
+tier = 3
+published = "2026-11"
+url = "https://www.fox6now.com/news/illinois-iowa-blast-lead-dust"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "suntimes-2026-illinois-lead-plume"
+title = "Illinois toxic lead dust plume from Army site explosion in Iowa"
+publisher = "Chicago Sun-Times"
+source_type = "news"
+tier = 3
+published = "2026-11-18"
+url = "https://chicago.suntimes.com/environment/2026/11/18/illinois-toxic-lead-dust-plume-army-site-explosion-iowa"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "wbez-2026-illinois-lead-plume"
+title = "Illinois toxic lead dust plume from Army site explosion in Iowa"
+publisher = "WBEZ"
+source_type = "news"
+tier = 3
+published = "2026-11-19"
+url = "https://www.wbez.org/environment/2026/11/19/illinois-toxic-lead-dust-plume-army-site-explosion-iowa"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Confirm the Illinois EPA speaker's name and title before quoting."
+
+[[sources]]
+doc_id = "cp24-2026-lead-dust-battle"
+title = "Fears about toxic lead dust spur battle over Army plan to detonate in Iowa"
+publisher = "CP24 (CNN)"
+source_type = "news"
+tier = 3
+published = "2026-11-21"
+url = "https://www.cp24.com/news/world/2026/11/21/fears-about-toxic-lead-dust-spur-battle-over-us-army-plan-to-detonate-bomb-making-material-in-iowa-heres-what-we-know/"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Source of Telle's \"routine stockpile surveillance\" description."
+
+[[sources]]
+doc_id = "defensenews-2026-155mm-production"
+title = "Manufacturing woes hamper US 155mm ammo production"
+publisher = "Defense News"
+source_type = "news"
+tier = 3
+published = "2026-07-14"
+url = "https://www.defensenews.com/news/your-military/2026/07/14/manufacturing-woes-hamper-us-155-mm-ammo-production/"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "defensepost-2026-ammo-plant-framework"
+title = "US Army awards $4.17B framework to modernize ammunition plants"
+publisher = "The Defense Post"
+source_type = "news"
+tier = 3
+published = "2026-11-10"
+url = "https://thedefensepost.com/2026/11/10/us-army-ammo-plants/amp/"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "stripes-2026-munitions-shortages"
+title = "Pentagon lacks plan for munitions shortages, watchdog says"
+publisher = "Stars and Stripes"
+source_type = "news"
+tier = 3
+published = "2026-11-19"
+url = "https://www.stripes.com/theaters/us/2026-11-19/pentagon-plan-munitions-shortages-watchdog-23519353.html"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "upi-2026-pentagon-munitions"
+title = "Pentagon munitions planning (GAO report)"
+publisher = "UPI"
+source_type = "news"
+tier = 3
+published = "2026-11-19"
+url = "https://upi.com/Top_News/US/2026/11/19/pentagon-munitions/5241795122345"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "thehill-2026-pentagon-munitions-plan"
+title = "Pentagon lacks munitions plan, GAO says"
+publisher = "The Hill"
+source_type = "news"
+tier = 3
+published = "2026-11"
+url = "https://thehill.com/policy/defense/6231155-pentagon-lacks-munitions-plan-gao"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "politifact-2026-munitions-supply"
+title = "Fact check on \"unlimited\" munitions supply"
+publisher = "PolitiFact"
+source_type = "news"
+tier = 3
+published = "2026-03-06"
+url = "https://api.politifact.com/article/2026/mar/06/Trump-munitions-unlimited-supply-shortage"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "grassley-line1-workers-commentary"
+title = "Keeping government accountable (Line 1 nuclear workers)"
+publisher = "Office of Sen. Chuck Grassley"
+source_type = "commentary"
+tier = 3
+url = "https://www.grassley.senate.gov/news/commentary/keeping-government-accountable-0"
+status = "to_collect"
+verified = true
+safety_review = false
+
+[[sources]]
+doc_id = "uiowa-fwp-line1-eeoicpa"
+title = "Former Worker Program, Line 1 and EEOICPA"
+publisher = "University of Iowa"
+source_type = "reference_data"
+tier = 3
+url = "https://iowafwp.public-health.uiowa.edu/line1/EEOICPA.html"
+status = "to_collect"
+verified = true
+safety_review = false
+
+# ------------------------------------------------ Tier 3: advocacy, company, other
+[[sources]]
+doc_id = "earthjustice-2026-groups-sue"
+title = "Groups sue to halt planned detonation at ammunition plant in Iowa"
+publisher = "Earthjustice"
+source_type = "advocacy"
+tier = 3
+published = "2026-11-19"
+url = "https://earthjustice.org/press/2026/groups-sue-to-halt-planned-detonation-at-ammunition-plant-in-iowa"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Plaintiffs' account. Attribute."
+
+[[sources]]
+doc_id = "aollc-company-site"
+title = "American Ordnance LLC company website"
+publisher = "American Ordnance LLC"
+source_type = "company"
+tier = 3
+url = "https://aollc.biz/"
+status = "to_collect"
+verified = false
+safety_review = false
+notes = "Company claims. Attribute."
+
+[[sources]]
+doc_id = "dayzim-munitions-services"
+title = "Day & Zimmermann munitions services"
+publisher = "Day & Zimmermann"
+source_type = "company"
+tier = 3
+url = "https://www.dayzim.com/services-and-products/munitions"
+status = "to_collect"
+verified = false
+safety_review = false
+notes = "Company claims. Attribute."
+
+[[sources]]
+doc_id = "globalsecurity-iaaap"
+title = "Iowa Army Ammunition Plant"
+publisher = "GlobalSecurity.org"
+source_type = "reference_data"
+tier = 3
+url = "https://www.globalsecurity.org/military/facility/aap-iowa.htm"
+status = "to_collect"
+verified = false
+safety_review = false
+
+[[sources]]
+doc_id = "afsc-investigate-day-zimmermann"
+title = "Day & Zimmermann company profile"
+publisher = "AFSC Investigate"
+source_type = "advocacy"
+tier = 3
+url = "https://investigate.afsc.org/company/day-zimmermann"
+status = "to_collect"
+verified = false
+safety_review = false
+
+[[sources]]
+doc_id = "science-lowe-2026-detonating-lead-azide"
+title = "Detonating a huge pile of lead azide, really? (In the Pipeline)"
+publisher = "Science (Derek Lowe blog)"
+source_type = "commentary"
+tier = 3
+published = "2026-11"
+url = "https://www.science.org/content/blog-post/detonating-huge-pile-lead-azide-really"
+status = "to_collect"
+verified = true
+safety_review = true
+notes = "Chemist's commentary on foreseeability. Heavy chemistry; expect most passages to be filtered out."
+
+[[sources]]
+doc_id = "wsws-2026-iowa-lead-azide"
+title = "Iowa lead azide (cites Business Insider \"for potential production\")"
+publisher = "WSWS"
+source_type = "commentary"
+tier = 3
+published = "2026-11-20"
+url = "https://www.wsws.org/en/articles/2026/11/20/iowa-n20.html"
+status = "needs_original"
+verified = false
+safety_review = false
+notes = "Pointer only. Find the Business Insider original before using the claim."
+
+# ------------------------------------------------- Tier 4: own analysis
+[[sources]]
+doc_id = "silvia-methodology"
+title = "Methodology: Iowa Army Ammunition Plant lead azide investigation"
+publisher = "John Bear"
+source_type = "analysis"
+tier = 4
+published = "2026-11-22"
+local_path = "data/sources/methodology.md"
+format = "markdown"
+status = "collected"
+verified = true
+safety_review = false
+notes = "methodology.md. Cited for \"how do you know this?\" questions. The file is not in the repo yet; add it at local_path before ingest."
+
+# Deliberately excluded
+#   - Wikipedia "Lead(II) azide": tertiary; chemistry-heavy. Find its underlying source instead.
+#   - Scribd copy of the 1984 Shaneyfelt paper: reading copy only, never cited.
+#   - Source dossier and summary of findings: working documents built from the sources above.
+#     The model should cite the records, not John's notes about them.
