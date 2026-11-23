@@ -1,0 +1,36 @@
+# Written by the collector (python -m branchiv_org.ingest.collect). Do not edit by hand.
+# One table per doc_id: the latest download. Earlier snapshots are kept in `history`.
+# The files themselves are in data/raw/, which is not in git.
+
+[sources."army-2026-jmc-casing-of-colors"]
+url = "https://www.army.mil/article/293166"
+final_url = "https://www.army.mil/article/293166"
+http_status = 200
+content_type = "text/html; charset=utf-8"
+format = "html"
+bytes = 22569
+sha256 = "a9d97d388c33fbe3f0c4991cb227d3d36aa4143632d4a9a2844e4ef356ad3b86"
+retrieved_at = 2026-11-23T03:22:49Z
+local_path = "data/raw/army-2026-jmc-casing-of-colors/20261123T032249Z.html"
+
+[sources."gao-23-105352"]
+url = "https://www.gao.gov/assets/gao-23-105352.pdf"
+final_url = "https://www.gao.gov/assets/gao-23-105352.pdf"
+http_status = 200
+content_type = "application/pdf"
+format = "pdf"
+bytes = 2731209
+sha256 = "c9de3c50e939ff8838484e454c1652d7902472b703b2d95d43a1a8b9dd776d85"
+retrieved_at = 2026-11-23T03:22:50Z
+local_path = "data/raw/gao-23-105352/20261123T032250Z.pdf"
+
+[sources."ipr-2026-army-detonation-risks"]
+url = "https://www.iowapublicradio.org/environment/2026-11-19/army-lead-detonation-public-health-safety-risks"
+final_url = "https://www.iowapublicradio.org/environment/2026-11-19/army-lead-detonation-public-health-safety-risks"
+http_status = 200
+content_type = "text/html;charset=UTF-8"
+format = "html"
+bytes = 196878
+sha256 = "3d107cf4b5e0c1ccfce6e05eca95ae1d27744bb5f23f92a281bcd95f23ee3ea5"
+retrieved_at = 2026-11-23T03:22:50Z
+local_path = "data/raw/ipr-2026-army-detonation-risks/20261123T032250Z.html"
