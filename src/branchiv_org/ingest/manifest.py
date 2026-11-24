@@ -61,6 +61,8 @@ Caveat = Literal[
     "archived_copy",  # web archive snapshot
     "advocacy_host",  # official record hosted by an advocacy group
     "live_page",  # content changes; the snapshot is dated
+    # a primary record of what someone said; claims inside it are not verified by it
+    "statement_claims_unverified",
 ]
 
 # Lowercase slug: letters, digits, single hyphens. Stable forever once used.

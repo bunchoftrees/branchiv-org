@@ -1,6 +1,6 @@
 # Sources to fetch by hand
 
-Generated after the collector run of 2026-11-23. 95 of 116 sources were downloaded and recorded in `collected.toml`; the 21 below were not. (The 199 MB 2018 RCRA response to comments was fetched on a second run with a 250 MB cap.)
+Generated after the collector run of 2026-11-23. 95 of 117 sources were downloaded and recorded in `collected.toml`; the 22 below were not. (The 199 MB 2018 RCRA response to comments was fetched on a second run with a 250 MB cap.)
 
 To add a file you downloaded yourself:
 
@@ -9,6 +9,15 @@ uv run python -m branchiv_org.ingest.collect import <doc_id> <path-to-file>
 ```
 
 It copies the file into `data/raw/<doc_id>/`, detects the format (PDF, HTML or text), records the checksum and marks the entry `method = "manual"` in `collected.toml`. Your original file is left where it is.
+
+## Blocked by robots.txt (1)
+
+The site's robots.txt asks automated tools not to fetch these, so the collector skips them (reason `robots_disallowed`). Save the page as a PDF in a browser and import it.
+
+- **Trump postpones planned detonation of toxic drums at Iowa Army facility** (`nbc-2026-trump-postpones-detonation`)
+  - Link: https://www.nbcnews.com/science/environment/trump-postpones-planned-detonation-toxic-drums-iowa-army-facility-rcna610945
+  - Why: nbcnews.com disallows automated fetching in robots.txt
+  - Import: `uv run python -m branchiv_org.ingest.collect import nbc-2026-trump-postpones-detonation ~/Downloads/<file>`
 
 ## Blocked (HTTP 403 or connection refused) (4)
 

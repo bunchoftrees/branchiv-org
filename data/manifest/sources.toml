@@ -3,7 +3,7 @@
 # Validate with: uv run python -m branchiv_org.ingest.manifest
 
 # Bump whenever sources are added, removed or re-fetched.
-snapshot_version = "2026-11-23"
+snapshot_version = "2026-11-23.1"
 # Date the statuses and notes below were last checked.
 as_of = 2026-11-22
 
@@ -1273,12 +1273,14 @@ title = "Trump postpones planned detonation of toxic drums at Iowa Army facility
 publisher = "NBC News"
 source_type = "news"
 tier = 3
-published = "2026-11"
+published = "2026-11-23"
 url = "https://www.nbcnews.com/science/environment/trump-postpones-planned-detonation-toxic-drums-iowa-army-facility-rcna610945"
 status = "to_collect"
 verified = true
 safety_review = false
-notes = "Reports the presidential halt. Use it to find the original statement and any Army, EPA or DOJ follow-through, and add those as tier 1 records. Title from the URL; confirm the title and date at collection."
+caveats = ["statement_claims_unverified"]
+caveat_note = "Reports the President's statement halting the detonation. Claims in that statement are attributed to him and have not been verified against primary records."
+notes = "Reports the presidential halt. robots.txt blocks automated fetch; save as PDF in a browser and import. Title from the URL slug; correct it from the article when imported. Find the underlying statement/post and any Army, EPA or DOJ record of the halt as tier-1 entries (the statement itself gets caveat statement_claims_unverified)."
 
 [[sources]]
 doc_id = "defensenews-2026-155mm-production"

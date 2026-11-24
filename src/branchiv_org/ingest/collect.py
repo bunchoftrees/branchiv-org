@@ -32,6 +32,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Literal
 from urllib.parse import urlsplit
+from urllib.robotparser import RobotFileParser
 
 import httpx2
 
@@ -69,6 +70,8 @@ class Settings:
     max_retries: int = 3
     backoff_s: float = 2.0
     max_backoff_s: float = 60.0
+    # Check each host's robots.txt (fetched once per host per run) before downloading.
+    respect_robots: bool = True
 
 
 # ------------------------------------------------------------------ planning
@@ -202,7 +205,10 @@ def detect_format(content_type: str | None, head: bytes) -> FetchedFormat | None
     return None
 
 
-Result = Literal["new", "unchanged", "changed", "snapshot", "failed"]
+Result = Literal["new", "unchanged", "changed", "snapshot", "skipped", "failed"]
+
+# robots.txt is matched against this product token (the User-Agent without version).
+ROBOTS_AGENT = USER_AGENT.split("/")[0]
 
 
 @dataclass(frozen=True)
@@ -233,6 +239,7 @@ class Collector:
         self._sleep = sleep or time.sleep
         self._now = now or (lambda: datetime.now(UTC))
         self._last_request: dict[str, float] = {}
+        self._robots: dict[str, RobotFileParser | str] = {}
 
     def _wait_for_host(self, host: str) -> None:
         last = self._last_request.get(host)
@@ -249,8 +256,39 @@ class Collector:
         )
         return min(delay, self.settings.max_backoff_s)
 
+    def _robots_verdict(self, url: str) -> str | None:
+        """None if robots.txt allows the url, otherwise the skip reason."""
+        parts = urlsplit(url)
+        host = (parts.hostname or "").lower()
+        if host not in self._robots:
+            self._robots[host] = self._load_robots(f"{parts.scheme}://{parts.netloc}/robots.txt")
+        rules = self._robots[host]
+        if isinstance(rules, str):
+            return rules
+        return None if rules.can_fetch(ROBOTS_AGENT, url) else "robots_disallowed"
+
+    def _load_robots(self, robots_url: str) -> RobotFileParser | str:
+        self._wait_for_host(host_of(robots_url))
+        parser = RobotFileParser(robots_url)
+        try:
+            response = self.client.get(robots_url)
+        except httpx2.HTTPError:
+            return "robots_unavailable: robots.txt could not be fetched"
+        status = response.status_code
+        if status in (401, 403):
+            parser.parse(["User-agent: *", "Disallow: /"])  # same rule as urllib.robotparser
+        elif status >= 500 or status == 429:
+            return f"robots_unavailable: robots.txt returned HTTP {status}"
+        elif status >= 400:
+            parser.parse([])  # no robots.txt: no restrictions
+        else:
+            parser.parse(response.text.splitlines())
+        return parser
+
     def collect(self, source: Source, previous: Fetch | None) -> Outcome:
         assert source.url is not None
+        if self.settings.respect_robots and (reason := self._robots_verdict(source.url)):
+            return Outcome(source.doc_id, "skipped", reason)
         try:
             fetch = self._download(source.doc_id, source.url)
         except FetchFailed as e:
@@ -438,7 +476,8 @@ def run(
     out(
         "done: "
         + " ".join(
-            f"{r}={counts[r]}" for r in ("new", "changed", "snapshot", "unchanged", "failed")
+            f"{r}={counts[r]}"
+            for r in ("new", "changed", "snapshot", "unchanged", "skipped", "failed")
         )
     )
     return outcomes

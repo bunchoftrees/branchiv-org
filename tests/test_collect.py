@@ -74,6 +74,7 @@ def fake_time() -> FakeTime:
 def collector(
     handler: Handler, tmp_path: Path, fake_time: FakeTime, **settings: object
 ) -> Collector:
+    settings.setdefault("respect_robots", False)  # robots.txt has its own tests below
     s = Settings(raw_dir=tmp_path / "raw", **settings)  # type: ignore[arg-type]
     client = make_client(s, httpx2.MockTransport(handler))
     return Collector(client, s, clock=fake_time.clock, sleep=fake_time.sleep, now=fake_time.now)
@@ -518,3 +519,58 @@ def test_suspect_html_fails_but_keeps_the_file(tmp_path: Path, fake_time: FakeTi
     assert outcome.result == "failed"
     assert outcome.fetch is None
     assert len(list((tmp_path / "raw" / "alpha").iterdir())) == 1
+
+
+# ------------------------------------------------------------------ robots.txt
+
+ROBOTS = (
+    b"User-agent: *\nDisallow: /private/\n\n"
+    b"User-agent: branchiv-org-collector\nDisallow: /nobots/\n"
+)
+
+
+def robots_site(robots_status: int = 200, robots_body: bytes = ROBOTS) -> tuple[Handler, list[str]]:
+    seen: list[str] = []
+
+    def handler(request: httpx2.Request) -> httpx2.Response:
+        seen.append(request.url.path)
+        if request.url.path == "/robots.txt":
+            return httpx2.Response(robots_status, content=robots_body)
+        return httpx2.Response(200, content=PDF, headers=PDF_TYPE)
+
+    return handler, seen
+
+
+def test_robots_disallowed_is_skipped_without_fetching(tmp_path: Path, fake_time: FakeTime) -> None:
+    handler, seen = robots_site(robots_body=b"User-agent: *\nDisallow: /private/\n")
+    c = collector(handler, tmp_path, fake_time, respect_robots=True)
+
+    private = c.collect(source("p", "https://a.example/private/doc.pdf"), None)
+    public = c.collect(source("ok", "https://a.example/public/doc.pdf"), None)
+
+    assert (private.result, private.message) == ("skipped", "robots_disallowed")
+    assert public.result == "new"
+    assert seen == ["/robots.txt", "/public/doc.pdf"]  # robots.txt fetched once per host
+
+
+def test_robots_group_for_our_agent_takes_precedence(tmp_path: Path, fake_time: FakeTime) -> None:
+    # A group naming our agent replaces the "*" group, as the robots.txt standard says.
+    handler, _ = robots_site(robots_body=ROBOTS)
+    c = collector(handler, tmp_path, fake_time, respect_robots=True)
+    assert c.collect(source("n", "https://a.example/nobots/doc.pdf"), None).result == "skipped"
+    assert c.collect(source("p", "https://a.example/private/doc.pdf"), None).result == "new"
+
+
+@pytest.mark.parametrize(
+    ("status", "result"),
+    [(404, "new"), (403, "skipped"), (503, "skipped")],
+)
+def test_robots_status_handling(
+    tmp_path: Path, fake_time: FakeTime, status: int, result: str
+) -> None:
+    handler, _ = robots_site(robots_status=status, robots_body=b"")
+    c = collector(handler, tmp_path, fake_time, respect_robots=True, max_retries=0)
+    outcome = c.collect(source(), None)
+    assert outcome.result == result
+    if status == 503:
+        assert outcome.message.startswith("robots_unavailable")

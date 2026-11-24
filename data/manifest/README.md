@@ -58,6 +58,7 @@ in the corpus but carries labels:
 | `archived_copy` | Web archive snapshot (e.g. the UNT End of Term archive, EPA's Jan 2021 snapshot). |
 | `advocacy_host` | An official record hosted by an advocacy group. |
 | `live_page` | Content changes over time; ingest saves a dated snapshot. |
+| `statement_claims_unverified` | A primary record of what someone said (a post, speech or statement). It proves the statement was made, not that its claims are true; answers must attribute the claims and check them against other records. |
 
 Rules:
 
