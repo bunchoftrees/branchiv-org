@@ -3,7 +3,7 @@
 # Validate with: uv run python -m branchiv_org.ingest.manifest
 
 # Bump whenever sources are added, removed or re-fetched.
-snapshot_version = "2026-11-22.2"
+snapshot_version = "2026-11-23"
 # Date the statuses and notes below were last checked.
 as_of = 2026-11-22
 
@@ -1266,6 +1266,19 @@ status = "to_collect"
 verified = true
 safety_review = false
 notes = "Source of Telle's \"routine stockpile surveillance\" description."
+
+[[sources]]
+doc_id = "nbc-2026-trump-postpones-detonation"
+title = "Trump postpones planned detonation of toxic drums at Iowa Army facility"
+publisher = "NBC News"
+source_type = "news"
+tier = 3
+published = "2026-11"
+url = "https://www.nbcnews.com/science/environment/trump-postpones-planned-detonation-toxic-drums-iowa-army-facility-rcna610945"
+status = "to_collect"
+verified = true
+safety_review = false
+notes = "Reports the presidential halt. Use it to find the original statement and any Army, EPA or DOJ follow-through, and add those as tier 1 records. Title from the URL; confirm the title and date at collection."
 
 [[sources]]
 doc_id = "defensenews-2026-155mm-production"
