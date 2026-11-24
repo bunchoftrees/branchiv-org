@@ -1,6 +1,6 @@
 # Sources to fetch by hand
 
-Generated after the collector run of 2026-11-23. 95 of 118 sources were downloaded and recorded in `collected.toml`; the 23 below were not. (The 199 MB 2018 RCRA response to comments was fetched on a second run with a 250 MB cap.)
+Generated after the collector run of 2026-11-23. 96 of 119 sources are recorded in `collected.toml` (95 fetched, 1 imported by hand); the 23 below are not. (The 199 MB 2018 RCRA response to comments was fetched on a second run with a 250 MB cap.)
 
 To add a file you downloaded yourself:
 
@@ -10,7 +10,7 @@ uv run python -m branchiv_org.ingest.collect import <doc_id> <path-to-file>
 
 It copies the file into `data/raw/<doc_id>/`, detects the format (PDF, HTML or text), records the checksum and marks the entry `method = "manual"` in `collected.toml`. Your original file is left where it is.
 
-## Blocked by robots.txt or automated-access rules (2)
+## Blocked by robots.txt or automated-access rules (1)
 
 These sites ask automated tools not to fetch their pages, so the collector skips them (reason `robots_disallowed`) or we do not try. Save the page as a PDF in a browser and import it.
 
@@ -18,10 +18,6 @@ These sites ask automated tools not to fetch their pages, so the collector skips
   - Link: https://www.nbcnews.com/science/environment/trump-postpones-planned-detonation-toxic-drums-iowa-army-facility-rcna610945
   - Why: nbcnews.com disallows automated fetching in robots.txt
   - Import: `uv run python -m branchiv_org.ingest.collect import nbc-2026-trump-postpones-detonation ~/Downloads/<file>`
-- **Trump orders halt on Iowa lead detonation plans** (`politico-2026-trump-orders-halt-detonation`)
-  - Link: https://www.politico.com/news/2026/11/23/trump-orders-halt-on-iowa-lead-detonation-plans-01180820
-  - Why: politico.com is reported to block automated access (not checked; no request was made)
-  - Import: `uv run python -m branchiv_org.ingest.collect import politico-2026-trump-orders-halt-detonation ~/Downloads/<file>`
 
 ## Blocked (HTTP 403 or connection refused) (4)
 
@@ -111,10 +107,13 @@ Probably temporary. Try the collector again later before downloading by hand.
   - Why: DTIC public access offline. Try NTIS, a library or FOIA (Distribution A).
   - Import: `uv run python -m branchiv_org.ingest.collect import ddesb-1984-shaneyfelt-complexities-of-lead-azide ~/Downloads/<file>`
 
-## No link yet (4)
+## No link yet (5)
 
 Find the document, then either add its `url` to sources.toml and re-run the collector, or download it and import it.
 
+- **Truth Social post on pausing the IAAAP lead azide detonation** (`trump-2026-truth-social-detonation-pause`)
+  - Why: reported by Politico; link to the original post not found yet. Capture the exact text and timestamp (screenshot or archive.org copy).
+  - Import: `uv run python -m branchiv_org.ingest.collect import trump-2026-truth-social-detonation-pause ~/Downloads/<file>`
 - **8th Circuit petition and docket (Iowa Environmental Council and Sierra Club v. EPA)** (`ca8-2026-lead-azide-docket`)
   - Why: PACER: petition, EPA's Nov 20 response, DOJ's Nov 21 filing.
   - Import: `uv run python -m branchiv_org.ingest.collect import ca8-2026-lead-azide-docket ~/Downloads/<file>`

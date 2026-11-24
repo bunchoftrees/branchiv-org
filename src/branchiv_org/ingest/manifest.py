@@ -32,6 +32,7 @@ SourceType = Literal[
     "public_notice",
     "court_filing",
     "testimony",
+    "statement",  # a public statement or social media post by an official
     "legal_code",
     "contract_record",
     "contract_data",

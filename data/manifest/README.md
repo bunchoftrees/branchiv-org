@@ -21,7 +21,7 @@ validation instead of being silently ignored.
 | `doc_id` | yes | Stable slug (`lowercase-with-hyphens`), conventionally `<publisher>-<year>-<slug>`. It is the `documents` primary key and is cited in answers and eval labels, so never rename or reuse one. |
 | `title` | yes | Human-readable title, shown in citations. |
 | `publisher` | yes | Who issued it. |
-| `source_type` | yes | What kind of document it is: `permit_notice`, `regulatory_record`, `press_release`, `public_notice`, `court_filing`, `testimony`, `legal_code`, `contract_record`, `contract_data`, `oversight_report`, `crs_report`, `gov_report`, `health_assessment`, `command_history`, `technical_paper`, `reference_data`, `video`, `news`, `advocacy`, `company`, `commentary`, `analysis`. |
+| `source_type` | yes | What kind of document it is: `permit_notice`, `regulatory_record`, `press_release`, `public_notice`, `court_filing`, `testimony`, `statement`, `legal_code`, `contract_record`, `contract_data`, `oversight_report`, `crs_report`, `gov_report`, `health_assessment`, `command_history`, `technical_paper`, `reference_data`, `video`, `news`, `advocacy`, `company`, `commentary`, `analysis`. |
 | `tier` | yes | How much the source is trusted, 1 (most) to 4; see [Tiers](#tiers). |
 | `published` | no | `"YYYY"`, `"YYYY-MM"` or `"YYYY-MM-DD"` (quoted), at whatever precision is known. Omit if unknown. The `documents` table gets the first day of that period, for recency. |
 | `url` | see below | Canonical `http(s)` link that citations point to. |

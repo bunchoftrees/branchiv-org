@@ -3,7 +3,7 @@
 # Validate with: uv run python -m branchiv_org.ingest.manifest
 
 # Bump whenever sources are added, removed or re-fetched.
-snapshot_version = "2026-11-23.2"
+snapshot_version = "2026-11-23.3"
 # Date the statuses and notes below were last checked.
 as_of = 2026-11-22
 
@@ -1284,7 +1284,7 @@ notes = "Reports the presidential halt. robots.txt blocks automated fetch; save 
 
 [[sources]]
 doc_id = "politico-2026-trump-orders-halt-detonation"
-title = "Trump orders halt on Iowa lead detonation plans"
+title = "Trump orders hold on Army's explosive plans in Iowa"
 publisher = "Politico"
 source_type = "news"
 tier = 3
@@ -1295,7 +1295,21 @@ verified = true
 safety_review = false
 caveats = ["statement_claims_unverified"]
 caveat_note = "Politico's headline says the President ordered a halt; NBC says he postponed it. What instrument was used and its legal effect are unconfirmed until Army, EPA or DOJ records are in the corpus."
-notes = "Title from the URL slug; correct it from the article when imported. The site is reported to block automated access, so fetch it in a browser and import."
+notes = "By Ellie Borst, 2026-11-23 2:37 PM CST. Imported by hand from John's browser PDF. Reports a Truth Social post saying the Army should pause the detonation until the 8th Circuit rules and Gov.-elect Rob Sand agrees. The post itself is trump-2026-truth-social-detonation-pause."
+
+[[sources]]
+doc_id = "trump-2026-truth-social-detonation-pause"
+title = "Truth Social post on pausing the IAAAP lead azide detonation"
+publisher = "President Donald Trump (Truth Social)"
+source_type = "statement"
+tier = 1
+published = "2026-11-23"
+status = "to_collect"
+verified = false
+safety_review = false
+caveats = ["statement_claims_unverified"]
+caveat_note = "The President's own post. It records what he said; its claims, and whether it amounts to an order to the Army, are not verified by the post itself."
+notes = "Reported by Politico (politico-2026-trump-orders-halt-detonation) as posted Monday afternoon, Nov 23. Link not found yet. Capture the exact text and timestamp (screenshot or archive) and import. verified = false until the original post is in hand."
 
 [[sources]]
 doc_id = "defensenews-2026-155mm-production"

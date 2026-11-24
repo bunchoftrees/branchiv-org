@@ -986,6 +986,16 @@ sha256 = "8f57aab85d510ccbe162352558e11205985278eb03b64e985b2d2f018f40d52c"
 retrieved_at = 2026-11-23T03:32:00Z
 local_path = "data/raw/pbs-2026-iowans-brace-for-lead-dust/20261123T033200Z.html"
 
+[sources."politico-2026-trump-orders-halt-detonation"]
+method = "manual"
+url = "https://www.politico.com/news/2026/11/23/trump-orders-halt-on-iowa-lead-detonation-plans-01180820"
+content_type = "application/pdf"
+format = "pdf"
+bytes = 2309384
+sha256 = "f14e0fda2451a2694ab2f8f917a1f3d33347a0e1cdfb97b667c5109c0ad87f12"
+retrieved_at = 2026-11-24T00:09:53Z
+local_path = "data/raw/politico-2026-trump-orders-halt-detonation/20261124T000953Z.pdf"
+
 [sources."politifact-2026-munitions-supply"]
 method = "http"
 url = "https://api.politifact.com/article/2026/mar/06/Trump-munitions-unlimited-supply-shortage"
