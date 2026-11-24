@@ -3,7 +3,7 @@
 # Validate with: uv run python -m branchiv_org.ingest.manifest
 
 # Bump whenever sources are added, removed or re-fetched.
-snapshot_version = "2026-11-23.1"
+snapshot_version = "2026-11-23.2"
 # Date the statuses and notes below were last checked.
 as_of = 2026-11-22
 
@@ -1281,6 +1281,21 @@ safety_review = false
 caveats = ["statement_claims_unverified"]
 caveat_note = "Reports the President's statement halting the detonation. Claims in that statement are attributed to him and have not been verified against primary records."
 notes = "Reports the presidential halt. robots.txt blocks automated fetch; save as PDF in a browser and import. Title from the URL slug; correct it from the article when imported. Find the underlying statement/post and any Army, EPA or DOJ record of the halt as tier-1 entries (the statement itself gets caveat statement_claims_unverified)."
+
+[[sources]]
+doc_id = "politico-2026-trump-orders-halt-detonation"
+title = "Trump orders halt on Iowa lead detonation plans"
+publisher = "Politico"
+source_type = "news"
+tier = 3
+published = "2026-11-23"
+url = "https://www.politico.com/news/2026/11/23/trump-orders-halt-on-iowa-lead-detonation-plans-01180820"
+status = "to_collect"
+verified = true
+safety_review = false
+caveats = ["statement_claims_unverified"]
+caveat_note = "Politico's headline says the President ordered a halt; NBC says he postponed it. What instrument was used and its legal effect are unconfirmed until Army, EPA or DOJ records are in the corpus."
+notes = "Title from the URL slug; correct it from the article when imported. The site is reported to block automated access, so fetch it in a browser and import."
 
 [[sources]]
 doc_id = "defensenews-2026-155mm-production"
